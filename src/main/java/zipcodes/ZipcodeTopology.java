@@ -1,21 +1,26 @@
+package zipcodes;
+
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.topology.TopologyBuilder;
-import org.apache.storm.tuple.Fields;
+import zipcodes.ZipcodeBolt;
+import zipcodes.ZipcodeSpout;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class ZipcodeTopology {
 
     public static void main(String[] args) throws Exception {
 
         boolean isLocal = true;
-        Path inputPath = Paths.get("<zipcode_path_here>");
+
+        String filePath = args[0];
+        Path inputPath = Paths.get(filePath);
         System.out.println(inputPath.toString());
 
         // Read zip codes from the CSV file
