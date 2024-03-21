@@ -11,8 +11,8 @@ import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.topology.TopologyBuilder;
 
-import zipcodes.ZipcodeBolt;
-import zipcodes.ZipcodeSpout;
+import org.apache.storm.tuple.Fields;
+
 
 public class ForecastTopology {
 

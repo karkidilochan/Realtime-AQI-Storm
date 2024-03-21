@@ -19,7 +19,8 @@ public class WeatherBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         String zipCode = tuple.getStringByField("zipcode");
-        System.out.println(zipCode);
+        System.out.println("Received Zipcode: " + zipCode);
+
 
         /*
          * // Parse weather data and extract state-wise information

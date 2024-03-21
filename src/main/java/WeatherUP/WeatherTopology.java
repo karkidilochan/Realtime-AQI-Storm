@@ -1,12 +1,12 @@
 package WeatherUP;
 
+import Forecast.LossyCountBolt;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
-import org.apache.storm.topology.ConfigurableTopology;
 import org.apache.storm.topology.TopologyBuilder;
-import zipcodes.ZipcodeBolt;
-import zipcodes.ZipcodeSpout;
+import org.apache.storm.tuple.Fields;
+
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -37,7 +37,8 @@ public class WeatherTopology {
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("weather-spout", new WeatherSpout(zipCodes));
         // TODO: change the shuffle grouping for the zipcode bolt
-        builder.setBolt("weather-bolt", new WeatherBolt()).shuffleGrouping("zipcode-spout");
+        builder.setBolt("weather-bolt", new LossyCountBolt()).fieldsGrouping("weather-spout", new Fields("state", "index"));
+//        builder.setBolt("weather-bolt", new WeatherBolt()).shuffleGrouping("weather-spout");
 
         Config conf = new Config();
         conf.setDebug(true);

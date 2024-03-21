@@ -41,12 +41,12 @@ public class LossyCountBolt extends BaseRichBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("word", "count"));
+        declarer.declare(new Fields("state", "count"));
     }
 
     @Override
     public Map<String, Object> getComponentConfiguration() {
-        int emitFrequency = 10;
+        int emitFrequency = 3;
         Config conf = new Config();
         conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, emitFrequency);
         return conf;
@@ -78,7 +78,7 @@ public class LossyCountBolt extends BaseRichBolt {
      * @param input
      */
     private void insert(Tuple input) {
-        String s = input.getStringByField("hash");
+        String s = input.getStringByField("state");
         Item item = counts.get(s);
         if (item == null) {
             item = new Item(bucket - 1);
@@ -114,6 +114,7 @@ public class LossyCountBolt extends BaseRichBolt {
             return;
         }
         Map<String, Item> output = sortMapDescending(counts, size);
+        System.out.println(output);
         for (Entry<String, Item> entry : output.entrySet()) {
             collector.emit(
                     new Values(entry.getKey(), entry.getValue().actual()));

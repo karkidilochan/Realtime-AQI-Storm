@@ -1,5 +1,7 @@
 package WeatherUP;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.OutputFieldsDeclarer;
@@ -21,7 +23,7 @@ public class WeatherSpout extends BaseRichSpout {
 
     private String apiUrl = "http://api.weatherapi.com/v1/current.json";
 
-    private String apiKey = "";
+    private String apiKey = "92997c8a8c38446bac804408241503";
 
     private int index = 0;
 
@@ -36,9 +38,12 @@ public class WeatherSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
         if (this.zipCodes != null) {
+            if(index >= zipCodes.size()) {
+                return;
+            }
             // make an api call and emit the output of weather api
             try {
-                URL url = new URL(this.apiUrl + "?key=" + this.apiKey + "&q=" + zipCodes.get(index));
+                URL url = new URL(this.apiUrl + "?key=" + this.apiKey + "&q=" + zipCodes.get(index) + "&aqi=yes");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
 
@@ -52,11 +57,24 @@ public class WeatherSpout extends BaseRichSpout {
                 reader.close();
                 connection.disconnect();
 
+                System.out.println("Weather API output:");
+                ObjectMapper objectMapper = new ObjectMapper();
+                JsonNode rootNode = objectMapper.readTree(response.toString());
+
+                // Extract state name
+                String state = rootNode.path("location").path("region").asText();
+                System.out.println("State: " + state);
+
+                // Extract us-epa-index
+                int usEpaIndex = rootNode.path("current").path("air_quality").path("us-epa-index").asInt();
+                System.out.println("US EPA Index: " + usEpaIndex);
+
                 /*
                  * TODO: uncomment this to send api response to the bolts
                  * also parse the received weather data before sending it
                  */
-                // this.collector.emit(new Values(response.toString()));
+                 this.collector.emit(new Values(state, usEpaIndex));
+                 index++;
             } catch (Exception e) {
                 System.out.println("Error while sending get request to weather api: " + e.getMessage());
                 e.printStackTrace();
@@ -64,13 +82,13 @@ public class WeatherSpout extends BaseRichSpout {
 
             // TODO: change this to the weather api response and send to the bolt
             // currently sending zipcode to make the work flow, while printing api outputs
-            this.collector.emit(new Values(zipCodes.get(index)));
-            index++;
+//            this.collector.emit(new Values(zipCodes.get(index)));
+//            index++;
         }
     }
 
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("zipcode"));
+        declarer.declare(new Fields("state", "index"));
 
         // TODO: uncomment this
         // declarer.declare(new Fields("weatherData"));
