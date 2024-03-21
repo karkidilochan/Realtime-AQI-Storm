@@ -1,4 +1,62 @@
 package WeatherUP;
 
-public class weatherTopology {
+import org.apache.storm.Config;
+import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
+import org.apache.storm.topology.ConfigurableTopology;
+import org.apache.storm.topology.TopologyBuilder;
+import zipcodes.ZipcodeBolt;
+import zipcodes.ZipcodeSpout;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.nio.file.Path;
+
+public class WeatherTopology {
+
+    public static void main(String[] args) throws Exception {
+
+        // ConfigurableTopology.start(new WeatherTopology(), args);
+
+        boolean isLocal = true;
+
+        String filePath = args[0];
+        Path inputPath = Paths.get(filePath);
+        System.out.println(inputPath.toString());
+
+        // Read zip codes from the CSV file
+        List<String> zipCodes = new ArrayList<>();
+        Files.lines(inputPath).skip(1).forEach(line -> {
+            String[] parts = line.split(",");
+            zipCodes.add(parts[0]);
+        });
+
+        // Setup topology
+        TopologyBuilder builder = new TopologyBuilder();
+        builder.setSpout("weather-spout", new WeatherSpout(zipCodes));
+        // TODO: change the shuffle grouping for the zipcode bolt
+        builder.setBolt("weather-bolt", new WeatherBolt()).shuffleGrouping("zipcode-spout");
+
+        Config conf = new Config();
+        conf.setDebug(true);
+
+        if (!isLocal) {
+            conf.setNumWorkers(3);
+            StormSubmitter.submitTopology(args[1], conf, builder.createTopology());
+        } else {
+            LocalCluster cluster = new LocalCluster();
+            cluster.submitTopology("zipcode-topology", conf, builder.createTopology());
+            Thread.sleep(2000000); // Placehold for sleep
+            cluster.shutdown();
+        }
+    }
+
+    /*
+     * @Override
+     * // protected int run(String[] args) {
+     * 
+     * }
+     */
 }
