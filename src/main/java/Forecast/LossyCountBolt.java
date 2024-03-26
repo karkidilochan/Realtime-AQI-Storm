@@ -19,9 +19,7 @@ import org.apache.storm.tuple.Values;
 
 public class LossyCountBolt extends BaseRichBolt {
 
-    private static final long serialVersionUID = -7619769952927707443L;
-
-    private final Map<String, Item> counts = new HashMap<>();
+    private final Map<String, Map<String, Item>> counts = new HashMap<>();
     private OutputCollector collector;
     private int capacity;
     private int bucket;
@@ -41,12 +39,12 @@ public class LossyCountBolt extends BaseRichBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("state", "count"));
+        declarer.declare(new Fields("index","state", "count"));
     }
 
     @Override
     public Map<String, Object> getComponentConfiguration() {
-        int emitFrequency = 3;
+        int emitFrequency = 5;
         Config conf = new Config();
         conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, emitFrequency);
         return conf;
@@ -57,11 +55,13 @@ public class LossyCountBolt extends BaseRichBolt {
         if (input.getSourceComponent().equals(Constants.SYSTEM_COMPONENT_ID)
                 && input.getSourceStreamId()
                         .equals(Constants.SYSTEM_TICK_STREAM_ID)) {
+            System.out.println(input);
             forward();
         } else {
             if (++items % capacity == 0) {
                 // process entire bucket and then run delete phase.
-                delete();
+                String index = input.getStringByField("index");
+                delete(index);
                 ++bucket;
             }
             insert(input);
@@ -78,13 +78,22 @@ public class LossyCountBolt extends BaseRichBolt {
      * @param input
      */
     private void insert(Tuple input) {
-        String s = input.getStringByField("state");
-        Item item = counts.get(s);
+        String state = input.getStringByField("state");
+        String index = input.getStringByField("index");
+
+        Map<String, Item> stateCounts = counts.computeIfAbsent(index, k -> new HashMap<>());
+
+        System.out.println("State Counts before: " + stateCounts);
+
+        Item item = stateCounts.get(state);
         if (item == null) {
             item = new Item(bucket - 1);
         }
         item.increment();
-        counts.put(s, item);
+
+        stateCounts.put(state, item);
+        System.out.println("State counts after " + counts.get(index));
+        counts.put(index, stateCounts);
     }
 
     /**
@@ -94,8 +103,8 @@ public class LossyCountBolt extends BaseRichBolt {
      * d : delta value of b - 1 when seen <br>
      * b : current bucket
      */
-    private void delete() {
-        counts.values().removeIf(value -> value.deconstruct(bucket));
+    private void delete(String index) {
+        counts.get(index).values().removeIf(value -> value.deconstruct(bucket));
     }
 
     /**
@@ -107,18 +116,25 @@ public class LossyCountBolt extends BaseRichBolt {
      */
     private void forward() {
 
-        filter();
+        for (String index: counts.keySet()) {
+            filter(index);
+            int size = Math.min(counts.size(), 100);
 
-        int size = counts.size() > 100 ? 100 : counts.size();
-        if (size == 0) {
-            return;
+            if (size == 0) {
+                return;
+            }
+            Map<String, Item> output = sortMapDescending(counts.get(index), size);
+
+            System.out.println(index);
+            System.out.println(output);
+
+            for (Entry<String, Item> entry : output.entrySet()) {
+                collector.emit(
+                        new Values(index, entry.getKey(), entry.getValue().actual()));
+            }
         }
-        Map<String, Item> output = sortMapDescending(counts, size);
-        System.out.println(output);
-        for (Entry<String, Item> entry : output.entrySet()) {
-            collector.emit(
-                    new Values(entry.getKey(), entry.getValue().actual()));
-        }
+
+
     }
 
     /**
@@ -131,9 +147,9 @@ public class LossyCountBolt extends BaseRichBolt {
      * N : total number of items in D data structure D <br>
      * 
      */
-    private void filter() {
-        int total = counts.size();
-        counts.values()
+    private void filter(String index) {
+        int total = counts.get(index).size();
+        counts.get(index).values()
                 .removeIf(value -> value.frequency < (THRESHOLD
                         - EPSILON) / total);
     }

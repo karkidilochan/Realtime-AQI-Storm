@@ -24,10 +24,7 @@ import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Tuple;
 
 public class ReportBolt extends BaseRichBolt {
-
-    // private static final long serialVersionUID = -6466276910345741034L;
-
-    private final Map<String, Long> counts = new HashMap<>();
+    private final Map<String, Map<String, Long>> counts = new HashMap<>();
 
     private BufferedWriter buffer;
 
@@ -36,7 +33,7 @@ public class ReportBolt extends BaseRichBolt {
             OutputCollector collector) {
         try {
             buffer = new BufferedWriter(
-                    new FileWriter("forecast_log.txt", true));
+                    new FileWriter("current_aqi_log.txt", true));
         } catch (IOException e) {
             System.out.println("Error while writing log: " + e.getMessage());
             e.printStackTrace();
@@ -46,7 +43,8 @@ public class ReportBolt extends BaseRichBolt {
     @Override
     public Map<String, Object> getComponentConfiguration() {
         /* emit tick tuples every 10 seconds */
-        int emitFrequency = 10;
+//        TODO: frequency should be 60 seconds
+        int emitFrequency = 15;
         Config conf = new Config();
         conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, emitFrequency);
         return conf;
@@ -61,36 +59,47 @@ public class ReportBolt extends BaseRichBolt {
             write();
         } else {
             /* TODO: fix the fields */
-            counts.put(input.getStringByField("state"),
+            String index = input.getStringByField("index");
+            Map<String, Long> stateCounts = counts.computeIfAbsent(index, k -> new HashMap<>());
+
+            stateCounts.put(input.getStringByField("state"),
                     input.getLongByField("count"));
+            counts.put(index, stateCounts);
         }
 
     }
 
     private void write() {
-        int size = counts.size() > 100 ? 100 : counts.size();
+        System.out.println("Write called");
+        int size = Math.min(counts.size(), 6);
         if (size == 0) {
             return;
         }
-        StringBuilder sb = new StringBuilder(Instant.now().toString());
-        sb.append(" ::: ");
 
-        Map<String, Long> output = sortMapDescending(counts, size);
 
-        counts.clear();
+        for (String index: counts.keySet()) {
+            StringBuilder sb = new StringBuilder(Instant.now().toString());
+            sb.append(" ");
 
-        for (Entry<String, Long> entry : output.entrySet()) {
-            sb.append(entry.getKey()).append("(").append(entry.getValue())
-                    .append("), ");
-        }
-        System.out.println(sb.toString() + "\n\n");
-        try {
-            buffer.write(sb.toString() + "\n\n");
-            buffer.flush();
-        } catch (IOException e) {
-            System.out.println("Error while writing log: " + e.getMessage());
-            e.printStackTrace();
-        }
+            Map<String, Long> output = sortMapDescending(counts.get(index), 5);
+
+            counts.get(index).clear();
+
+            sb.append(index + " ");
+
+            for (Entry<String, Long> entry : output.entrySet()) {
+                sb.append(entry.getKey()).append(" ").append(entry.getValue())
+                        .append(" ");
+            }
+            System.out.println(sb.toString() + "\n");
+            try {
+                buffer.write(sb.toString() + "\n");
+                buffer.flush();
+            } catch (IOException e) {
+                System.out.println("Error while writing log: " + e.getMessage());
+                e.printStackTrace();
+            }
+        };
     }
 
     @Override

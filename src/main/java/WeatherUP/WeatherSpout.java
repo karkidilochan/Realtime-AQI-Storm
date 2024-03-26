@@ -66,7 +66,7 @@ public class WeatherSpout extends BaseRichSpout {
                 System.out.println("State: " + state);
 
                 // Extract us-epa-index
-                int usEpaIndex = rootNode.path("current").path("air_quality").path("us-epa-index").asInt();
+                String usEpaIndex = rootNode.path("current").path("air_quality").path("us-epa-index").toString();
                 System.out.println("US EPA Index: " + usEpaIndex);
 
                 /*
