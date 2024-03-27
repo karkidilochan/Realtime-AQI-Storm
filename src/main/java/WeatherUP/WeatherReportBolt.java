@@ -1,4 +1,4 @@
-package Forecast;
+package WeatherUP;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -11,10 +11,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-import javax.swing.text.Utilities;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.storm.Config;
 import org.apache.storm.Constants;
 import org.apache.storm.task.OutputCollector;
@@ -23,7 +19,7 @@ import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Tuple;
 
-public class ReportBolt extends BaseRichBolt {
+public class WeatherReportBolt extends BaseRichBolt {
     private final Map<String, Map<String, Long>> counts = new HashMap<>();
 
     private BufferedWriter buffer;
@@ -43,7 +39,7 @@ public class ReportBolt extends BaseRichBolt {
     @Override
     public Map<String, Object> getComponentConfiguration() {
         /* emit tick tuples every 10 seconds */
-//        TODO: frequency should be 60 seconds
+        // TODO: frequency should be 60 seconds
         int emitFrequency = 15;
         Config conf = new Config();
         conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, emitFrequency);
@@ -76,8 +72,7 @@ public class ReportBolt extends BaseRichBolt {
             return;
         }
 
-
-        for (String index: counts.keySet()) {
+        for (String index : counts.keySet()) {
             StringBuilder sb = new StringBuilder(Instant.now().toString());
             sb.append(" ");
 
@@ -99,7 +94,8 @@ public class ReportBolt extends BaseRichBolt {
                 System.out.println("Error while writing log: " + e.getMessage());
                 e.printStackTrace();
             }
-        };
+        }
+        ;
     }
 
     @Override

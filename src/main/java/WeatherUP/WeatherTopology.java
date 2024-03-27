@@ -1,13 +1,10 @@
 package WeatherUP;
 
-import Forecast.LossyCountBolt;
-import Forecast.ReportBolt;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
-
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -38,8 +35,9 @@ public class WeatherTopology {
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("weather-spout", new WeatherSpout(zipCodes));
         // TODO: change the shuffle grouping for the zipcode bolt
-        builder.setBolt("weather-bolt", new LossyCountBolt()).fieldsGrouping("weather-spout", new Fields("index"));
-        builder.setBolt("report-bolt", new ReportBolt()).fieldsGrouping("weather-bolt", new Fields("index"));
+        builder.setBolt("weather-bolt", new WeatherLossyCountBolt()).fieldsGrouping("weather-spout",
+                new Fields("index"));
+        builder.setBolt("report-bolt", new WeatherReportBolt()).fieldsGrouping("weather-bolt", new Fields("index"));
 
         Config conf = new Config();
         conf.setDebug(true);
@@ -49,16 +47,10 @@ public class WeatherTopology {
             StormSubmitter.submitTopology(args[1], conf, builder.createTopology());
         } else {
             LocalCluster cluster = new LocalCluster();
-            cluster.submitTopology("zipcode-topology", conf, builder.createTopology());
+            cluster.submitTopology("current-topology", conf, builder.createTopology());
             Thread.sleep(2000000); // Placehold for sleep
             cluster.shutdown();
         }
     }
 
-    /*
-     * @Override
-     * // protected int run(String[] args) {
-     * 
-     * }
-     */
 }

@@ -13,7 +13,6 @@ import org.apache.storm.topology.TopologyBuilder;
 
 import org.apache.storm.tuple.Fields;
 
-
 public class ForecastTopology {
 
     public static void main(String[] args) throws Exception {
@@ -36,10 +35,10 @@ public class ForecastTopology {
         int threads = 2;
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("forecast-spout", new ForecastSpout(zipCodes));
-        builder.setBolt("count-bolt", new LossyCountBolt(), threads)
+        builder.setBolt("count-bolt", new ForecastLossyCountBolt(), threads)
                 .setNumTasks(executorTasks)
-                .fieldsGrouping("forecast-spout", new Fields("state"));
-        builder.setBolt("report-bolt", new ReportBolt())
+                .fieldsGrouping("forecast-spout", new Fields("coverage"));
+        builder.setBolt("report-bolt", new ForecastReportBolt())
                 .globalGrouping("count-bolt");
 
         Config conf = new Config();
@@ -50,7 +49,7 @@ public class ForecastTopology {
             StormSubmitter.submitTopology(args[1], conf, builder.createTopology());
         } else {
             LocalCluster cluster = new LocalCluster();
-            cluster.submitTopology("zipcode-topology", conf, builder.createTopology());
+            cluster.submitTopology("forecast-topology", conf, builder.createTopology());
             Thread.sleep(2000000); // Placehold for sleep
             cluster.shutdown();
         }

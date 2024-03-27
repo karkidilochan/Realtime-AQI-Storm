@@ -17,7 +17,7 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 
-public class LossyCountBolt extends BaseRichBolt {
+public class ForecastLossyCountBolt extends BaseRichBolt {
 
     private final Map<String, Map<String, Item>> counts = new HashMap<>();
     private OutputCollector collector;
@@ -39,7 +39,7 @@ public class LossyCountBolt extends BaseRichBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("index","state", "count"));
+        declarer.declare(new Fields("coverage", "state", "count"));
     }
 
     @Override
@@ -60,8 +60,8 @@ public class LossyCountBolt extends BaseRichBolt {
         } else {
             if (++items % capacity == 0) {
                 // process entire bucket and then run delete phase.
-                String index = input.getStringByField("index");
-                delete(index);
+                String coverage = input.getStringByField("coverage");
+                delete(coverage);
                 ++bucket;
             }
             insert(input);
@@ -79,9 +79,9 @@ public class LossyCountBolt extends BaseRichBolt {
      */
     private void insert(Tuple input) {
         String state = input.getStringByField("state");
-        String index = input.getStringByField("index");
+        String coverage = input.getStringByField("coverage");
 
-        Map<String, Item> stateCounts = counts.computeIfAbsent(index, k -> new HashMap<>());
+        Map<String, Item> stateCounts = counts.computeIfAbsent(coverage, k -> new HashMap<>());
 
         System.out.println("State Counts before: " + stateCounts);
 
@@ -92,8 +92,8 @@ public class LossyCountBolt extends BaseRichBolt {
         item.increment();
 
         stateCounts.put(state, item);
-        System.out.println("State counts after " + counts.get(index));
-        counts.put(index, stateCounts);
+        System.out.println("State counts after " + counts.get(coverage));
+        counts.put(coverage, stateCounts);
     }
 
     /**
@@ -103,8 +103,8 @@ public class LossyCountBolt extends BaseRichBolt {
      * d : delta value of b - 1 when seen <br>
      * b : current bucket
      */
-    private void delete(String index) {
-        counts.get(index).values().removeIf(value -> value.deconstruct(bucket));
+    private void delete(String coverage) {
+        counts.get(coverage).values().removeIf(value -> value.deconstruct(bucket));
     }
 
     /**
@@ -116,24 +116,23 @@ public class LossyCountBolt extends BaseRichBolt {
      */
     private void forward() {
 
-        for (String index: counts.keySet()) {
-            filter(index);
+        for (String coverage : counts.keySet()) {
+            filter(coverage);
             int size = Math.min(counts.size(), 100);
 
             if (size == 0) {
                 return;
             }
-            Map<String, Item> output = sortMapDescending(counts.get(index), size);
+            Map<String, Item> output = sortMapDescending(counts.get(coverage), size);
 
-            System.out.println(index);
+            System.out.println(coverage);
             System.out.println(output);
 
             for (Entry<String, Item> entry : output.entrySet()) {
                 collector.emit(
-                        new Values(index, entry.getKey(), entry.getValue().actual()));
+                        new Values(coverage, entry.getKey(), entry.getValue().actual()));
             }
         }
-
 
     }
 
@@ -147,9 +146,9 @@ public class LossyCountBolt extends BaseRichBolt {
      * N : total number of items in D data structure D <br>
      * 
      */
-    private void filter(String index) {
-        int total = counts.get(index).size();
-        counts.get(index).values()
+    private void filter(String coverage) {
+        int total = counts.get(coverage).size();
+        counts.get(coverage).values()
                 .removeIf(value -> value.frequency < (THRESHOLD
                         - EPSILON) / total);
     }
