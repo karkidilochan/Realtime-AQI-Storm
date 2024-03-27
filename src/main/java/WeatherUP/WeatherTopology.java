@@ -40,7 +40,7 @@ public class WeatherTopology {
         builder.setBolt("report-bolt", new WeatherReportBolt()).fieldsGrouping("weather-bolt", new Fields("index"));
 
         Config conf = new Config();
-        conf.setDebug(true);
+        conf.setDebug(false);
 
         if (!isLocal) {
             conf.setNumWorkers(3);

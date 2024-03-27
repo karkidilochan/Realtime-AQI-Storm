@@ -34,15 +34,16 @@ public class ForecastTopology {
         int executorTasks = 4;
         int threads = 2;
         TopologyBuilder builder = new TopologyBuilder();
-        builder.setSpout("forecast-spout", new ForecastSpout(zipCodes));
+        builder.setSpout("forecast-spout", new ForecastSpout(zipCodes), threads);
         builder.setBolt("count-bolt", new ForecastLossyCountBolt(), threads)
                 .setNumTasks(executorTasks)
                 .fieldsGrouping("forecast-spout", new Fields("coverage"));
-        builder.setBolt("report-bolt", new ForecastReportBolt())
-                .globalGrouping("count-bolt");
+        builder.setBolt("report-bolt", new ForecastReportBolt(), threads)
+                        .setNumTasks(executorTasks);
 
         Config conf = new Config();
-        conf.setDebug(true);
+        conf.setDebug(false);
+        conf.put(Config.TOPOLOGY_DEBUG, false);
 
         if (!isLocal) {
             conf.setNumWorkers(3);

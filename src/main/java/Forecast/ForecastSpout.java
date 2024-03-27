@@ -43,17 +43,18 @@ public class ForecastSpout extends BaseRichSpout {
             }
             // make an api call and emit the output of weather api
             try {
-                String urlString = this.apiUrl + "?key=" + this.apiKey + "&q=" + zipCodes.get(index)
-                        + "&aqi=no&alerts=no";
 
-                JsonNode oneDayResponse = getAPIResponse(urlString + "&days=3");
+
+                JsonNode forecastResponse = getAPIResponse();
+                System.out.println(forecastResponse);
 
                 // Extract state name
-                String state = oneDayResponse.path("location").path("region").asText();
+                String state = forecastResponse.path("location").path("region").asText();
                 System.out.println("State: " + state);
 
                 // Extract us-epa-index
-                JsonNode forecastData = oneDayResponse.get("forecast").get("forecastday");
+                JsonNode forecastData = forecastResponse.get("forecast").get("forecastday");
+
 
                 for (int i = 0; i < 3; i++) {
                     String coverage = aggregateCoverage(forecastData.get(i).get("hour"));
@@ -78,10 +79,11 @@ public class ForecastSpout extends BaseRichSpout {
         }
     }
 
-    private JsonNode getAPIResponse(String urlString) throws Exception {
+    private JsonNode getAPIResponse() throws Exception {
+        URL urlString = new URL(this.apiUrl + "?key=" + this.apiKey + "&q=" + zipCodes.get(index)
+                + "&days=3&aqi=no&alerts=no");
 
-        URL oneUrl = new URL(urlString + "&days=1");
-        HttpURLConnection connection = (HttpURLConnection) oneUrl.openConnection();
+        HttpURLConnection connection = (HttpURLConnection) urlString.openConnection();
         connection.setRequestMethod("GET");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -126,7 +128,7 @@ public class ForecastSpout extends BaseRichSpout {
     }
 
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("state", "index"));
+        declarer.declare(new Fields("state", "coverage"));
 
         // TODO: uncomment this
         // declarer.declare(new Fields("weatherData"));
