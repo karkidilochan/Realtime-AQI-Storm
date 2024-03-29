@@ -46,11 +46,9 @@ public class ForecastSpout extends BaseRichSpout {
 
 
                 JsonNode forecastResponse = getAPIResponse();
-                System.out.println(forecastResponse);
 
                 // Extract state name
                 String state = forecastResponse.path("location").path("region").asText();
-                System.out.println("State: " + state);
 
                 // Extract us-epa-index
                 JsonNode forecastData = forecastResponse.get("forecast").get("forecastday");

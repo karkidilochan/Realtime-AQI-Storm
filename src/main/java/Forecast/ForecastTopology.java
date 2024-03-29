@@ -21,7 +21,6 @@ public class ForecastTopology {
 
         String filePath = args[0];
         Path inputPath = Paths.get(filePath);
-        System.out.println(inputPath.toString());
 
         // Read zip codes from the CSV file
         List<String> zipCodes = new ArrayList<>();
@@ -38,15 +37,14 @@ public class ForecastTopology {
         builder.setBolt("count-bolt", new ForecastLossyCountBolt(), threads)
                 .setNumTasks(executorTasks)
                 .fieldsGrouping("forecast-spout", new Fields("coverage"));
-        builder.setBolt("report-bolt", new ForecastReportBolt(), threads)
-                        .setNumTasks(executorTasks);
+        builder.setBolt("forecast-report-bolt", new ForecastReportBolt(), threads).fieldsGrouping("count-bolt", new Fields("coverage")).setNumTasks(executorTasks);
 
         Config conf = new Config();
         conf.setDebug(false);
         conf.put(Config.TOPOLOGY_DEBUG, false);
 
         if (!isLocal) {
-            conf.setNumWorkers(3);
+            conf.setNumWorkers(4);
             StormSubmitter.submitTopology(args[1], conf, builder.createTopology());
         } else {
             LocalCluster cluster = new LocalCluster();

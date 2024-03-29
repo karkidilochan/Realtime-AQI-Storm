@@ -55,7 +55,6 @@ public class WeatherLossyCountBolt extends BaseRichBolt {
         if (input.getSourceComponent().equals(Constants.SYSTEM_COMPONENT_ID)
                 && input.getSourceStreamId()
                         .equals(Constants.SYSTEM_TICK_STREAM_ID)) {
-            System.out.println(input);
             forward();
         } else {
             if (++items % capacity == 0) {
@@ -83,8 +82,6 @@ public class WeatherLossyCountBolt extends BaseRichBolt {
 
         Map<String, Item> stateCounts = counts.computeIfAbsent(index, k -> new HashMap<>());
 
-        System.out.println("State Counts before: " + stateCounts);
-
         Item item = stateCounts.get(state);
         if (item == null) {
             item = new Item(bucket - 1);
@@ -92,7 +89,6 @@ public class WeatherLossyCountBolt extends BaseRichBolt {
         item.increment();
 
         stateCounts.put(state, item);
-        System.out.println("State counts after " + counts.get(index));
         counts.put(index, stateCounts);
     }
 
@@ -125,8 +121,6 @@ public class WeatherLossyCountBolt extends BaseRichBolt {
             }
             Map<String, Item> output = sortMapDescending(counts.get(index), size);
 
-            System.out.println(index);
-            System.out.println(output);
 
             for (Entry<String, Item> entry : output.entrySet()) {
                 collector.emit(

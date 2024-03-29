@@ -66,7 +66,6 @@ public class WeatherReportBolt extends BaseRichBolt {
     }
 
     private void write() {
-        System.out.println("Write called");
         int size = Math.min(counts.size(), 6);
         if (size == 0) {
             return;

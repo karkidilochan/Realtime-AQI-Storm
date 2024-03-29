@@ -22,7 +22,6 @@ public class WeatherTopology {
 
         String filePath = args[0];
         Path inputPath = Paths.get(filePath);
-        System.out.println(inputPath.toString());
 
         // Read zip codes from the CSV file
         List<String> zipCodes = new ArrayList<>();
@@ -37,7 +36,7 @@ public class WeatherTopology {
         // TODO: change the shuffle grouping for the zipcode bolt
         builder.setBolt("weather-bolt", new WeatherLossyCountBolt()).fieldsGrouping("weather-spout",
                 new Fields("index"));
-        builder.setBolt("report-bolt", new WeatherReportBolt()).fieldsGrouping("weather-bolt", new Fields("index"));
+        builder.setBolt("weather-current-bolt", new WeatherReportBolt()).fieldsGrouping("weather-bolt", new Fields("index"));
 
         Config conf = new Config();
         conf.setDebug(false);

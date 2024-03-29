@@ -57,17 +57,14 @@ public class WeatherSpout extends BaseRichSpout {
                 reader.close();
                 connection.disconnect();
 
-                System.out.println("Weather API output:");
                 ObjectMapper objectMapper = new ObjectMapper();
                 JsonNode rootNode = objectMapper.readTree(response.toString());
 
                 // Extract state name
                 String state = rootNode.path("location").path("region").asText();
-                System.out.println("State: " + state);
 
                 // Extract us-epa-index
                 String usEpaIndex = rootNode.path("current").path("air_quality").path("us-epa-index").toString();
-                System.out.println("US EPA Index: " + usEpaIndex);
 
                 /*
                  * TODO: uncomment this to send api response to the bolts

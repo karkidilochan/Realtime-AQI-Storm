@@ -60,6 +60,7 @@ public class ForecastReportBolt extends BaseRichBolt {
         } else {
             /* TODO: fix the fields */
             String coverage = input.getStringByField("coverage");
+
             Map<String, Long> stateCounts = counts.computeIfAbsent(coverage, k -> new HashMap<>());
 
             stateCounts.put(input.getStringByField("state"),
@@ -70,7 +71,6 @@ public class ForecastReportBolt extends BaseRichBolt {
     }
 
     private void write() {
-        System.out.println("Write called");
         int size = Math.min(counts.size(), 6);
         if (size == 0) {
             return;
