@@ -18,7 +18,7 @@ public class WeatherTopology {
 
         // ConfigurableTopology.start(new WeatherTopology(), args);
 
-        boolean isLocal = true;
+        boolean isLocal = false;
 
         String filePath = args[0];
         Path inputPath = Paths.get(filePath);
@@ -43,7 +43,7 @@ public class WeatherTopology {
         conf.setDebug(false);
 
         if (!isLocal) {
-            conf.setNumWorkers(3);
+            conf.setNumWorkers(4);
             StormSubmitter.submitTopology(args[1], conf, builder.createTopology());
         } else {
             LocalCluster cluster = new LocalCluster();

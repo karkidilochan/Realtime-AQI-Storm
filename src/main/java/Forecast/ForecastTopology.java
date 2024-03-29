@@ -17,7 +17,7 @@ public class ForecastTopology {
 
     public static void main(String[] args) throws Exception {
 
-        boolean isLocal = true;
+        boolean isLocal = false;
 
         String filePath = args[0];
         Path inputPath = Paths.get(filePath);
@@ -57,3 +57,4 @@ public class ForecastTopology {
     }
 
 }
+
