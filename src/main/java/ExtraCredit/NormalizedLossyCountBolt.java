@@ -1,4 +1,4 @@
-package Forecast;
+package ExtraCredit;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 
-public class ForecastLossyCountBolt extends BaseRichBolt {
+public class NormalizedLossyCountBolt extends BaseRichBolt {
 
     private final Map<String, Map<String, Item>> counts = new HashMap<>();
     private OutputCollector collector;
@@ -28,9 +28,15 @@ public class ForecastLossyCountBolt extends BaseRichBolt {
     private final double EPSILON = 0.2;
     private final double THRESHOLD = 0.2;
 
+    private Map<String, Double> stateWeights = new HashMap<>();
+
+    public NormalizedLossyCountBolt(Map<String, Double> stateWeights) {
+        this.stateWeights = stateWeights;
+    }
+
     @Override
     public void prepare(Map<String, Object> topoConf, TopologyContext context,
-            OutputCollector collector) {
+                        OutputCollector collector) {
         this.capacity = (int) (1 / EPSILON);
         this.bucket = 1;
         this.items = 0;
@@ -54,7 +60,7 @@ public class ForecastLossyCountBolt extends BaseRichBolt {
     public void execute(Tuple input) {
         if (input.getSourceComponent().equals(Constants.SYSTEM_COMPONENT_ID)
                 && input.getSourceStreamId()
-                        .equals(Constants.SYSTEM_TICK_STREAM_ID)) {
+                .equals(Constants.SYSTEM_TICK_STREAM_ID)) {
             forward();
         } else {
             if (++items % capacity == 0) {
@@ -67,15 +73,7 @@ public class ForecastLossyCountBolt extends BaseRichBolt {
         }
     }
 
-    /**
-     * insert the items to D updating the ones that exist or creating a
-     * new entry (e, 1, b - 1) <br>
-     * <br>
-     * e : current word <br>
-     * b : current bucket
-     * 
-     * @param input
-     */
+
     private void insert(Tuple input) {
         String state = input.getStringByField("state");
         String coverage = input.getStringByField("coverage");
@@ -92,26 +90,15 @@ public class ForecastLossyCountBolt extends BaseRichBolt {
         counts.put(coverage, stateCounts);
     }
 
-    /**
-     * items from the current D where f + d <= b <br>
-     * <br>
-     * f : frequency of word <br>
-     * d : delta value of b - 1 when seen <br>
-     * b : current bucket
-     */
+
+
     private void delete(String coverage) {
         if (counts.containsKey(coverage)) {
             counts.get(coverage).values().removeIf(value -> value.deconstruct(bucket));
         }
     }
 
-    /**
-     * The top 100 true frequencies of e : f + delta <br>
-     * <br>
-     * f : frequency of word <br>
-     * d : delta value of b - 1 when seen <br>
-     * 
-     */
+
     private void forward() {
 
         for (String coverage : counts.keySet()) {
@@ -124,23 +111,15 @@ public class ForecastLossyCountBolt extends BaseRichBolt {
             Map<String, Item> output = sortMapDescending(counts.get(coverage), size);
 
             for (Entry<String, Item> entry : output.entrySet()) {
+                long normalizedCount = (long) (entry.getValue().actual() * stateWeights.get(entry.getKey()));
                 collector.emit(
-                        new Values(coverage, entry.getKey(), entry.getValue().actual()));
+                        new Values(coverage, entry.getKey(), normalizedCount));
             }
         }
 
     }
 
-    /**
-     * Only emit those entries in data structure D, where f >= (s - e) / N
-     * <br>
-     * <br>
-     * f : frequency of word <br>
-     * s : threshold (between 0 - 1) <br>
-     * e : epsilon <br>
-     * N : total number of items in D data structure D <br>
-     * 
-     */
+
     private void filter(String coverage) {
         int total = counts.get(coverage).size();
         counts.get(coverage).values()

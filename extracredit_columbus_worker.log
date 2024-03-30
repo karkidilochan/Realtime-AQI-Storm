@@ -1,0 +1,862 @@
+2024-03-30 15:31:52.507 o.a.s.v.ConfigValidation main [INFO] Will use [class org.apache.storm.Config] for validation
+2024-03-30 15:31:52.533 o.a.s.d.w.LogConfigManager main [INFO] Started with log levels: {=INFO, STDERR=INFO, STDOUT=INFO, org.apache.storm.metric.LoggingMetricsConsumer=INFO}
+2024-03-30 15:31:52.541 o.a.s.d.w.Worker main [INFO] Adding shutdown hook with kill in 3 secs
+2024-03-30 15:31:52.548 o.a.s.d.w.Worker main [INFO] Launching worker for extra-topology-16-1711834299 on c8ff9700-4011-4036-bfdf-f5543f37cbb0-129.82.44.139:30523 with id b788aad4-5d31-4ec0-b0ac-5398683b65e7 and conf {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, storm.exhibitor.port=30529, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, storm.oci.cgroup.root=/sys/fs/cgroup, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, supervisor.localizer.update.blob.interval.secs=30, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, storm.oci.nscd.dir=/var/run/nscd, java.home=/usr/lib/jvm/java-1.8.0-openjdk/jre, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemory=org.apache.storm.metrics2.cgroup.CGroupMemoryUsage, CGroupMemoryLimit=org.apache.storm.metrics2.cgroup.CGroupMemoryLimit, CGroupCpu=org.apache.storm.metrics2.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metrics2.cgroup.CGroupCpuGuarantee, CGroupCpuGuaranteeByCfsQuota=org.apache.storm.metrics2.cgroup.CGroupCpuGuaranteeByCfsQuota, CGroupCpuStat=org.apache.storm.metrics2.cgroup.CGroupCpuStat}, logviewer.port=30531, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], worker.max.timeout.secs=600, blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, topology.ras.acker.executors.per.worker=1, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[cheyenne.cs.colostate.edu], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, blacklist.scheduler.assume.supervisor.bad.based.on.bad.slot=true, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[30522, 30523, 30524, 30525], topology.stats.sample.rate=0.05, storm.local.dir=/tmp/storm_dilochan, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, storm.oci.cgroup.parent=/storm, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/lib/jvm/java-1.8.0-openjdk, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.worker.shared.thread.pool.size=4, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=30521, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=30530, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[salem.cs.colostate.edu], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=30526, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, topology.ras.one.executor.per.worker=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=30528, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=false, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/tmp/storm_dilochan, topology.spout.recvq.skips=3, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, topology.ras.one.component.per.worker=false, ui.host=0.0.0.0, supervisor.thrift.port=30527, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2024-03-30 15:31:52.550 o.a.s.s.u.o.l.s.c.SysOutOverSLF4JInitialiser main [WARN] Your logging framework class org.apache.logging.slf4j.Log4jLogger is not known - if it needs access to the standard println methods on the console you will need to register it by calling registerLoggingSystemPackage
+2024-03-30 15:31:52.552 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Replaced standard System.out and System.err PrintStreams with SLF4JPrintStreams
+2024-03-30 15:31:52.553 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Redirected System.out and System.err to SLF4J for this context
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:zookeeper.version=3.5.9-83df9301aa5c2a5d284a9940177808c01bc35cef, built on 01/06/2021 20:03 GMT
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:host.name=columbus-oh.cs.colostate.edu
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.version=1.8.0_402
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.vendor=Red Hat, Inc.
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.402.b06-2.el8.x86_64/jre
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.class.path=/usr/local/storm/2.4.0/lib-worker/log4j-over-slf4j-1.7.36.jar:/usr/local/storm/2.4.0/lib-worker/storm-shaded-deps-2.4.0.jar:/usr/local/storm/2.4.0/lib-worker/metrics-graphite-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/objenesis-2.1.jar:/usr/local/storm/2.4.0/lib-worker/log4j-api-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/kryo-3.0.3.jar:/usr/local/storm/2.4.0/lib-worker/reflectasm-1.10.1.jar:/usr/local/storm/2.4.0/lib-worker/log4j-slf4j-impl-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/slf4j-api-1.7.36.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.activation-1.2.1.jar:/usr/local/storm/2.4.0/lib-worker/metrics-jvm-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/storm-client-2.4.0.jar:/usr/local/storm/2.4.0/lib-worker/javax.annotation-api-1.3.2.jar:/usr/local/storm/2.4.0/lib-worker/asm-5.0.3.jar:/usr/local/storm/2.4.0/lib-worker/minlog-1.3.0.jar:/usr/local/storm/2.4.0/lib-worker/metrics-core-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.xml.bind-api-2.3.2.jar:/usr/local/storm/2.4.0/lib-worker/log4j-core-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.activation-api-1.2.1.jar:/usr/local/storm/2.4.0/extlib/*:/s/chopin/k/grad/dilochan/stormConf:/tmp/storm_dilochan/supervisor/stormdist/extra-topology-16-1711834299/stormjar.jar
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.library.path=/tmp/storm_dilochan/supervisor/stormdist/extra-topology-16-1711834299/resources/Linux-amd64:/tmp/storm_dilochan/supervisor/stormdist/extra-topology-16-1711834299/resources:/usr/lib/jvm/java-1.8.0-openjdk
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.io.tmpdir=/tmp/storm_dilochan/workers/b788aad4-5d31-4ec0-b0ac-5398683b65e7/tmp
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.compiler=<NA>
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.name=Linux
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.arch=amd64
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.version=4.18.0-513.11.1.el8_9.x86_64
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.name=dilochan
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.home=/s/chopin/k/grad/dilochan
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.dir=/tmp/storm_dilochan/workers/b788aad4-5d31-4ec0-b0ac-5398683b65e7
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.free=310MB
+2024-03-30 15:31:52.571 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.max=368MB
+2024-03-30 15:31:52.572 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.total=368MB
+2024-03-30 15:31:52.572 o.a.s.s.o.a.c.u.Compatibility main [INFO] Using emulated InjectSessionExpiration
+2024-03-30 15:31:52.582 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2024-03-30 15:31:52.582 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2024-03-30 15:31:52.584 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=cheyenne.cs.colostate.edu:30521 sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@4331d187
+2024-03-30 15:31:52.585 o.a.s.s.o.a.z.c.X509Util main [INFO] Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2024-03-30 15:31:52.587 o.a.s.s.o.a.z.ClientCnxnSocket main [INFO] jute.maxbuffer value is 4194304 Bytes
+2024-03-30 15:31:52.589 o.a.s.s.o.a.z.ClientCnxn main [INFO] zookeeper.request.timeout value is 0. feature enabled=
+2024-03-30 15:31:52.591 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Opening socket connection to server cheyenne.cs.colostate.edu/129.82.44.137:30521. Will not attempt to authenticate using SASL (unknown error)
+2024-03-30 15:31:52.592 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2024-03-30 15:31:52.593 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Socket connection established, initiating session, client: /129.82.44.139:53968, server: cheyenne.cs.colostate.edu/129.82.44.137:30521
+2024-03-30 15:31:52.596 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Session establishment complete on server cheyenne.cs.colostate.edu/129.82.44.137:30521, sessionid = 0x1002332a12002d0, negotiated timeout = 20000
+2024-03-30 15:31:52.597 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2024-03-30 15:31:52.600 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl Curator-Framework-0 [INFO] backgroundOperationsLoop exiting
+2024-03-30 15:31:52.600 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 15:31:52.600 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 15:31:52.704 o.a.s.s.o.a.z.ZooKeeper main [INFO] Session: 0x1002332a12002d0 closed
+2024-03-30 15:31:52.705 o.a.s.s.o.a.z.ClientCnxn main-EventThread [INFO] EventThread shut down for session: 0x1002332a12002d0
+2024-03-30 15:31:52.705 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2024-03-30 15:31:52.705 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2024-03-30 15:31:52.705 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=cheyenne.cs.colostate.edu:30521/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@3da05287
+2024-03-30 15:31:52.705 o.a.s.s.o.a.z.ClientCnxnSocket main [INFO] jute.maxbuffer value is 4194304 Bytes
+2024-03-30 15:31:52.706 o.a.s.s.o.a.z.ClientCnxn main [INFO] zookeeper.request.timeout value is 0. feature enabled=
+2024-03-30 15:31:52.706 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Opening socket connection to server cheyenne.cs.colostate.edu/129.82.44.137:30521. Will not attempt to authenticate using SASL (unknown error)
+2024-03-30 15:31:52.707 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Socket connection established, initiating session, client: /129.82.44.139:53974, server: cheyenne.cs.colostate.edu/129.82.44.137:30521
+2024-03-30 15:31:52.708 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Session establishment complete on server cheyenne.cs.colostate.edu/129.82.44.137:30521, sessionid = 0x1002332a12002d1, negotiated timeout = 20000
+2024-03-30 15:31:52.708 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2024-03-30 15:31:52.709 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2024-03-30 15:31:52.710 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 15:31:52.719 o.a.s.m.StormMetricRegistry main [INFO] Starting metrics reporters...
+2024-03-30 15:31:52.720 o.a.s.s.a.ClientAuthUtils main [INFO] Got AutoCreds []
+2024-03-30 15:31:52.723 o.a.s.m.TransportFactory main [INFO] Storm peer transport plugin:org.apache.storm.messaging.netty.Context
+2024-03-30 15:31:52.792 o.a.s.d.w.WorkerState main [INFO] Registering IConnectionCallbacks for c8ff9700-4011-4036-bfdf-f5543f37cbb0-129.82.44.139:30523
+2024-03-30 15:31:52.806 o.a.s.m.n.Server main [INFO] Create Netty Server Netty-server-localhost-30523, buffer_size: 5242880, maxWorkers: 1
+2024-03-30 15:31:52.839 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to boston.cs.colostate.edu:30524, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 15:31:52.841 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to carson-city.cs.colostate.edu:30523, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 15:31:52.841 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to concord.cs.colostate.edu:30524, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 15:31:52.888 o.a.s.e.Executor main [INFO] Loading executor tasks __system:[-1, -1]
+2024-03-30 15:31:52.889 o.a.s.e.Executor main [INFO] Finished loading executor __system:[-1, -1]
+2024-03-30 15:31:52.889 o.a.s.e.Executor main [INFO] Loading executor tasks __acker:[2, 2]
+2024-03-30 15:31:52.889 o.a.s.e.Executor main [INFO] Finished loading executor __acker:[2, 2]
+2024-03-30 15:31:52.890 o.a.s.e.Executor main [INFO] Loading executor tasks report-bolt:[13, 14]
+2024-03-30 15:31:52.890 o.a.s.e.Executor main [INFO] Finished loading executor report-bolt:[13, 14]
+2024-03-30 15:31:52.890 o.a.s.e.Executor main [INFO] Loading executor tasks count-bolt:[7, 8]
+2024-03-30 15:31:52.890 o.a.s.e.Executor main [INFO] Finished loading executor count-bolt:[7, 8]
+2024-03-30 15:31:52.892 o.a.s.d.w.Worker main [INFO] Flush Tuple generation disabled. producerBatchSize=1, xferBatchSize=1, flushIntervalMillis=1
+2024-03-30 15:31:52.892 o.a.s.d.w.Worker main [INFO] BackPressure status change checking will be performed every 50 millis
+2024-03-30 15:31:52.892 o.a.s.d.w.Worker main [INFO] Worker has topology config {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, topology.submitter.principal=, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, topology.name=extra-topology, storm.exhibitor.port=30529, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, storm.oci.cgroup.root=/sys/fs/cgroup, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, storm.id=extra-topology-16-1711834299, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, supervisor.localizer.update.blob.interval.secs=30, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, storm.oci.nscd.dir=/var/run/nscd, java.home=/usr/lib/jvm/java-1.8.0-openjdk/jre, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupCpuStat=org.apache.storm.metrics2.cgroup.CGroupCpuStat, CGroupMemoryLimit=org.apache.storm.metrics2.cgroup.CGroupMemoryLimit, CGroupCpuGuaranteeByCfsQuota=org.apache.storm.metrics2.cgroup.CGroupCpuGuaranteeByCfsQuota, CGroupMemory=org.apache.storm.metrics2.cgroup.CGroupMemoryUsage, CGroupCpu=org.apache.storm.metrics2.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metrics2.cgroup.CGroupCpuGuarantee}, logviewer.port=30531, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], worker.max.timeout.secs=600, blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, topology.ras.acker.executors.per.worker=1, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[cheyenne.cs.colostate.edu], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, blacklist.scheduler.assume.supervisor.bad.based.on.bad.slot=true, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[30522, 30523, 30524, 30525], topology.stats.sample.rate=0.05, storm.local.dir=/tmp/storm_dilochan, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, storm.oci.cgroup.parent=/storm, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/lib/jvm/java-1.8.0-openjdk, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, topology.kryo.register={}, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.kryo.decorators=[], topology.worker.shared.thread.pool.size=4, topology.submitter.user=dilochan, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=30521, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=30530, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[salem.cs.colostate.edu], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=30526, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, topology.ras.one.executor.per.worker=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=30528, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=4, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=false, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.users=[null], topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/tmp/storm_dilochan, topology.spout.recvq.skips=3, storm.zookeeper.superACL=null, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, topology.ras.one.component.per.worker=false, ui.host=0.0.0.0, supervisor.thrift.port=30527, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2024-03-30 15:31:52.892 o.a.s.d.w.Worker main [INFO] Worker b788aad4-5d31-4ec0-b0ac-5398683b65e7 for storm extra-topology-16-1711834299 on c8ff9700-4011-4036-bfdf-f5543f37cbb0-129.82.44.139:30523  has finished loading
+2024-03-30 15:31:52.935 o.a.s.d.w.WorkerState Netty-server-localhost-30523-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=b788aad4-5d31-4ec0-b0ac-5398683b65e7, bpStatusId=1, bpTasks=[], nonBpTasks=[2, 7, 8, 13, 14]}
+2024-03-30 15:31:52.942 o.a.s.d.w.WorkerState Netty-server-localhost-30523-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=b788aad4-5d31-4ec0-b0ac-5398683b65e7, bpStatusId=2, bpTasks=[], nonBpTasks=[2, 7, 8, 13, 14]}
+2024-03-30 15:31:53.018 o.a.s.d.w.WorkerState Netty-server-localhost-30523-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=b788aad4-5d31-4ec0-b0ac-5398683b65e7, bpStatusId=6, bpTasks=[], nonBpTasks=[2, 7, 8, 13, 14]}
+2024-03-30 15:31:53.711 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 15:31:53.724 o.a.s.d.w.WorkerState refresh-active-timer [INFO] All connections are ready for worker c8ff9700-4011-4036-bfdf-f5543f37cbb0-129.82.44.139:30523 with id b788aad4-5d31-4ec0-b0ac-5398683b65e7
+2024-03-30 15:31:53.724 o.a.s.e.b.BoltExecutor Thread-18-count-bolt-executor[7, 8] [INFO] Preparing bolt count-bolt:[7, 8]
+2024-03-30 15:31:53.724 o.a.s.e.b.BoltExecutor Thread-17-report-bolt-executor[13, 14] [INFO] Preparing bolt report-bolt:[13, 14]
+2024-03-30 15:31:53.724 o.a.s.e.b.BoltExecutor Thread-15-__system-executor[-1, -1] [INFO] Preparing bolt __system:[-1]
+2024-03-30 15:31:53.724 o.a.s.e.b.BoltExecutor Thread-16-__acker-executor[2, 2] [INFO] Preparing bolt __acker:[2]
+2024-03-30 15:31:53.725 o.a.s.e.b.BoltExecutor Thread-18-count-bolt-executor[7, 8] [INFO] Prepared bolt count-bolt:[7, 8]
+2024-03-30 15:31:53.725 o.a.s.e.b.BoltExecutor Thread-17-report-bolt-executor[13, 14] [INFO] Prepared bolt report-bolt:[13, 14]
+2024-03-30 15:31:53.725 o.a.s.e.b.BoltExecutor Thread-16-__acker-executor[2, 2] [INFO] Prepared bolt __acker:[2]
+2024-03-30 15:31:53.745 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.745 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuStat is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 15:31:53.746 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.746 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupMemoryLimit is ENABLED and directory /sys/fs/cgroup/memory exists...
+2024-03-30 15:31:53.747 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.747 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuGuaranteeByCfsQuota is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 15:31:53.748 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.748 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupMemoryUsage is ENABLED and directory /sys/fs/cgroup/memory exists...
+2024-03-30 15:31:53.749 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.749 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpu is ENABLED and directory /sys/fs/cgroup/cpuacct exists...
+2024-03-30 15:31:53.749 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 15:31:53.750 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuGuarantee is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 15:31:53.750 o.a.s.e.b.BoltExecutor Thread-15-__system-executor[-1, -1] [INFO] Prepared bolt __system:[-1]
+2024-03-30 15:32:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:08.726Z 3 California 0 Alabama 0 
+
+2024-03-30 15:32:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:08.731Z 4 Tennessee 0 Pennsylvania 0 
+
+2024-03-30 15:32:23.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:23.726Z 3 New York 1 California 1 Louisiana 0 Alabama 0 
+
+2024-03-30 15:32:23.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:23.726Z 4 Tennessee 0 Missouri 0 Minnesota 0 Pennsylvania 0 
+
+2024-03-30 15:32:38.725 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:38.725Z 3 Texas 2 New York 1 California 1 Montana 0 Louisiana 0 
+
+2024-03-30 15:32:38.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:38.726Z 4 Pennsylvania 1 Indiana 0 Tennessee 0 Colorado 0 Missouri 0 
+
+2024-03-30 15:32:53.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:53.726Z 3 New York 2 Texas 2 California 1 Montana 0 Louisiana 0 
+
+2024-03-30 15:32:53.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:32:53.726Z 4 Pennsylvania 2 Indiana 0 Tennessee 0 Colorado 0 Missouri 0 
+
+2024-03-30 15:33:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:08.726Z 3 Texas 4 New York 2 California 1 Montana 0 Louisiana 0 
+
+2024-03-30 15:33:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:08.727Z 4 Texas 3 Pennsylvania 2 Indiana 1 Tennessee 0 Colorado 0 
+
+2024-03-30 15:33:23.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:23.726Z 3 Texas 4 New York 2 Virginia 2 California 1 Vermont 0 
+
+2024-03-30 15:33:23.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:23.726Z 4 Texas 3 Illinois 2 Missouri 2 Pennsylvania 2 Indiana 1 
+
+2024-03-30 15:33:38.725 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:38.725Z 3 Texas 4 New York 2 Virginia 2 Massachusetts 1 California 1 
+
+2024-03-30 15:33:38.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:38.725Z 4 Texas 4 Illinois 2 Missouri 2 Minnesota 2 Pennsylvania 2 
+
+2024-03-30 15:33:53.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:53.726Z 3 Texas 4 New York 2 Iowa 2 Virginia 2 Massachusetts 1 
+
+2024-03-30 15:33:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:33:53.727Z 4 New York 5 Texas 4 Indiana 2 Illinois 2 Missouri 2 
+
+2024-03-30 15:34:08.725 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:08.725Z 3 Texas 7 New York 2 Iowa 2 Virginia 2 California 1 
+
+2024-03-30 15:34:08.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:08.725Z 4 New York 6 Texas 4 Indiana 2 Illinois 2 Missouri 2 
+
+2024-03-30 15:34:23.725 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:23.725Z 3 Pennsylvania 7 Texas 7 New York 2 Tennessee 2 Iowa 2 
+
+2024-03-30 15:34:23.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:23.726Z 4 New York 6 Pennsylvania 6 Texas 4 Illinois 4 Indiana 2 
+
+2024-03-30 15:34:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:38.726Z 3 Texas 9 New York 7 Pennsylvania 7 Tennessee 2 Iowa 2 
+
+2024-03-30 15:34:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:38.727Z 4 Texas 8 Pennsylvania 7 New York 6 Illinois 4 Indiana 2 
+
+2024-03-30 15:34:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:53.727Z 3 Texas 9 New York 7 Pennsylvania 7 West Virginia 3 Tennessee 2 
+
+2024-03-30 15:34:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:34:53.727Z 4 Texas 8 Pennsylvania 7 New York 6 Illinois 4 Indiana 2 
+
+2024-03-30 15:35:08.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:08.726Z 3 Texas 11 New York 7 Pennsylvania 7 Alabama 3 West Virginia 3 
+
+2024-03-30 15:35:08.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:08.726Z 4 Texas 9 Pennsylvania 7 New York 6 Michigan 4 Illinois 4 
+
+2024-03-30 15:35:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:23.727Z 3 Texas 11 Illinois 8 New York 7 Pennsylvania 7 Alabama 3 
+
+2024-03-30 15:35:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:23.727Z 4 Texas 9 Pennsylvania 7 New York 6 Indiana 4 Michigan 4 
+
+2024-03-30 15:35:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:38.727Z 3 Texas 12 Illinois 8 New York 7 Pennsylvania 7 Alabama 3 
+
+2024-03-30 15:35:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:38.727Z 4 Texas 9 Pennsylvania 7 Illinois 7 New York 6 Michigan 5 
+
+2024-03-30 15:35:53.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:53.726Z 3 Texas 12 Illinois 8 New York 7 Pennsylvania 7 Alabama 3 
+
+2024-03-30 15:35:53.726 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:35:53.726Z 4 Texas 11 Pennsylvania 7 Illinois 7 New York 6 Michigan 5 
+
+2024-03-30 15:36:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:08.727Z 3 Texas 14 New York 12 Illinois 8 Pennsylvania 7 Alabama 3 
+
+2024-03-30 15:36:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:08.727Z 4 Texas 11 Illinois 8 Pennsylvania 7 New York 6 Missouri 6 
+
+2024-03-30 15:36:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:23.727Z 3 Texas 14 New York 12 Illinois 8 Pennsylvania 7 New Jersey 4 
+
+2024-03-30 15:36:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:23.727Z 4 Texas 11 Illinois 8 Pennsylvania 7 New York 6 Missouri 6 
+
+2024-03-30 15:36:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:38.727Z 3 New York 14 Texas 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:36:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:38.727Z 4 California 12 Texas 11 Illinois 8 Pennsylvania 7 New York 6 
+
+2024-03-30 15:36:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:53.727Z 3 New York 14 Texas 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:36:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:36:53.727Z 4 Texas 14 California 12 Illinois 8 Pennsylvania 7 New York 6 
+
+2024-03-30 15:37:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:08.728Z 3 New York 14 Texas 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:37:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:08.728Z 4 Texas 14 California 12 Illinois 10 Pennsylvania 7 New York 6 
+
+2024-03-30 15:37:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:23.727Z 3 Texas 18 New York 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:37:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:23.727Z 4 Texas 14 California 12 Illinois 10 Minnesota 7 Pennsylvania 7 
+
+2024-03-30 15:37:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:38.727Z 3 Texas 18 New York 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:37:38.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:38.727Z 4 Texas 16 California 12 Illinois 11 Minnesota 7 Pennsylvania 7 
+
+2024-03-30 15:37:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:53.728Z 3 Texas 19 New York 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:37:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:37:53.728Z 4 Texas 16 California 12 Illinois 12 Michigan 8 Minnesota 7 
+
+2024-03-30 15:38:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:08.728Z 3 Texas 20 New York 14 Illinois 8 Missouri 8 Pennsylvania 7 
+
+2024-03-30 15:38:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:08.728Z 4 California 16 Texas 16 Illinois 12 Ohio 11 Michigan 8 
+
+2024-03-30 15:38:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:23.728Z 3 Texas 20 California 18 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:38:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:23.728Z 4 California 16 Texas 16 Illinois 12 Ohio 11 Missouri 9 
+
+2024-03-30 15:38:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:38.728Z 3 California 20 Texas 20 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:38:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:38.728Z 4 California 17 Texas 16 Illinois 12 Ohio 11 Missouri 9 
+
+2024-03-30 15:38:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:53.727Z 3 California 20 Texas 20 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:38:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:38:53.728Z 4 California 17 Texas 16 Illinois 12 Ohio 11 Michigan 10 
+
+2024-03-30 15:39:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:08.728Z 3 California 20 Texas 20 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:39:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:08.728Z 4 New York 18 California 17 Texas 16 Illinois 12 Ohio 11 
+
+2024-03-30 15:39:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:23.728Z 3 Texas 24 California 20 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:39:23.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:23.729Z 4 Texas 21 New York 19 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:39:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:38.728Z 3 Texas 24 California 23 New York 14 Illinois 8 Missouri 8 
+
+2024-03-30 15:39:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:38.728Z 4 Texas 22 New York 19 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:39:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:53.728Z 3 Pennsylvania 24 Texas 24 California 23 New York 14 Georgia 10 
+
+2024-03-30 15:39:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:39:53.728Z 4 Texas 22 New York 21 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:40:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:08.728Z 3 New York 25 Pennsylvania 24 Texas 24 California 23 Georgia 10 
+
+2024-03-30 15:40:08.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:08.728Z 4 Texas 22 New York 21 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:40:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:23.727Z 3 Texas 27 New York 25 Pennsylvania 24 California 23 Georgia 10 
+
+2024-03-30 15:40:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:23.728Z 4 Texas 22 New York 21 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:40:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:38.728Z 3 Texas 27 New York 25 Pennsylvania 24 California 23 Kentucky 11 
+
+2024-03-30 15:40:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:38.728Z 4 Texas 22 New York 21 California 17 Illinois 12 Ohio 11 
+
+2024-03-30 15:40:53.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:53.727Z 3 Texas 27 California 26 New York 25 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:40:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:40:53.727Z 4 Texas 26 California 23 New York 21 Missouri 13 Illinois 12 
+
+2024-03-30 15:41:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:08.727Z 3 Texas 30 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:41:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:08.727Z 4 Texas 26 Pennsylvania 24 California 23 New York 21 Missouri 13 
+
+2024-03-30 15:41:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:23.728Z 3 Texas 30 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:41:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:23.728Z 4 Texas 26 Pennsylvania 25 California 23 New York 21 Missouri 14 
+
+2024-03-30 15:41:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:38.728Z 3 Texas 30 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:41:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:38.728Z 4 Texas 27 Pennsylvania 25 California 23 New York 21 Ohio 17 
+
+2024-03-30 15:41:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:53.728Z 3 Texas 32 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:41:53.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:41:53.728Z 4 Texas 27 New York 26 Pennsylvania 25 California 23 Ohio 17 
+
+2024-03-30 15:42:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:08.727Z 3 Texas 33 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:42:08.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:08.727Z 4 Pennsylvania 27 Texas 27 New York 26 California 23 Ohio 17 
+
+2024-03-30 15:42:23.727 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:23.727Z 3 Texas 33 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:42:23.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:23.728Z 4 Pennsylvania 28 New York 27 Texas 27 California 23 Ohio 17 
+
+2024-03-30 15:42:38.728 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:38.728Z 3 Texas 34 New York 27 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:42:38.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:38.728Z 4 Pennsylvania 28 New York 27 Texas 27 California 23 Ohio 17 
+
+2024-03-30 15:42:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:53.729Z 3 Texas 34 New York 32 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:42:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:42:53.729Z 4 Pennsylvania 28 New York 27 Texas 27 California 23 Ohio 17 
+
+2024-03-30 15:43:08.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:08.729Z 3 Texas 34 New York 33 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:43:08.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:08.729Z 4 Pennsylvania 28 New York 27 Texas 27 California 23 Ohio 17 
+
+2024-03-30 15:43:23.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:23.729Z 3 Texas 37 New York 33 California 26 Pennsylvania 24 Iowa 14 
+
+2024-03-30 15:43:23.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:23.729Z 4 Texas 33 New York 30 California 30 Pennsylvania 28 Ohio 17 
+
+2024-03-30 15:43:38.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:38.729Z 3 Texas 37 Pennsylvania 35 New York 33 California 26 Iowa 14 
+
+2024-03-30 15:43:38.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:38.729Z 4 Texas 33 California 31 New York 30 Pennsylvania 28 Ohio 17 
+
+2024-03-30 15:43:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:53.728Z 3 Texas 37 Pennsylvania 35 New York 33 California 26 Virginia 17 
+
+2024-03-30 15:43:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:43:53.729Z 4 Texas 33 New York 31 California 31 Pennsylvania 28 Ohio 17 
+
+2024-03-30 15:44:08.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:08.729Z 3 Texas 40 Pennsylvania 35 New York 33 California 26 Virginia 17 
+
+2024-03-30 15:44:08.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:08.729Z 4 Texas 35 New York 31 California 31 Pennsylvania 28 Michigan 17 
+
+2024-03-30 15:44:23.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:23.729Z 3 Texas 40 Pennsylvania 35 New York 33 California 26 Virginia 18 
+
+2024-03-30 15:44:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:23.730Z 4 Texas 35 New York 33 California 31 Pennsylvania 28 Michigan 17 
+
+2024-03-30 15:44:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:38.729Z 3 Texas 41 New York 37 Pennsylvania 35 California 26 Virginia 18 
+
+2024-03-30 15:44:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:38.730Z 4 Texas 37 New York 33 Pennsylvania 33 California 31 Ohio 22 
+
+2024-03-30 15:44:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:53.729Z 3 Texas 42 New York 37 Pennsylvania 35 California 26 Minnesota 18 
+
+2024-03-30 15:44:53.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:44:53.729Z 4 Texas 37 New York 33 Pennsylvania 33 California 31 Ohio 22 
+
+2024-03-30 15:45:08.729 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:08.729Z 3 Texas 42 New York 39 Pennsylvania 35 California 26 Minnesota 18 
+
+2024-03-30 15:45:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:08.730Z 4 Texas 38 New York 35 Pennsylvania 33 California 31 Ohio 22 
+
+2024-03-30 15:45:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:23.730Z 3 Texas 44 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:45:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:23.730Z 4 Texas 39 New York 35 California 35 Pennsylvania 33 Ohio 22 
+
+2024-03-30 15:45:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:38.729Z 3 Texas 45 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:45:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:38.730Z 4 Texas 39 New York 35 California 35 Pennsylvania 33 Ohio 24 
+
+2024-03-30 15:45:53.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:53.730Z 3 Texas 45 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:45:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:45:53.730Z 4 Texas 39 Pennsylvania 37 New York 35 California 35 Illinois 27 
+
+2024-03-30 15:46:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:08.730Z 3 Texas 46 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:46:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:08.730Z 4 Texas 39 New York 38 Pennsylvania 37 California 35 Illinois 27 
+
+2024-03-30 15:46:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:23.730Z 3 Texas 47 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:46:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:23.730Z 4 Texas 39 New York 38 Pennsylvania 37 California 35 Illinois 27 
+
+2024-03-30 15:46:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:38.730Z 3 Texas 48 New York 39 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:46:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:38.730Z 4 New York 39 Texas 39 Pennsylvania 37 California 35 Illinois 27 
+
+2024-03-30 15:46:53.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:53.729Z 3 Texas 48 New York 45 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:46:53.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:46:53.730Z 4 New York 40 Texas 39 Pennsylvania 37 California 35 Illinois 27 
+
+2024-03-30 15:47:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:08.729Z 3 Texas 49 New York 45 Pennsylvania 35 California 26 Iowa 21 
+
+2024-03-30 15:47:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:08.730Z 4 Texas 44 New York 40 Pennsylvania 37 California 35 Illinois 31 
+
+2024-03-30 15:47:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:23.730Z 3 Texas 49 New York 45 Pennsylvania 35 Illinois 34 California 26 
+
+2024-03-30 15:47:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:23.730Z 4 Texas 44 New York 40 Pennsylvania 37 California 35 Illinois 31 
+
+2024-03-30 15:47:38.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:38.731Z 3 Texas 49 California 46 New York 45 Pennsylvania 35 Illinois 35 
+
+2024-03-30 15:47:38.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:38.731Z 4 Texas 44 New York 40 Pennsylvania 37 California 35 Illinois 31 
+
+2024-03-30 15:47:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:53.731Z 3 Texas 49 New York 47 Pennsylvania 47 California 46 Illinois 35 
+
+2024-03-30 15:47:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:47:53.731Z 4 Texas 44 Pennsylvania 43 New York 40 California 35 Illinois 31 
+
+2024-03-30 15:48:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:08.730Z 3 Texas 52 New York 47 Pennsylvania 47 California 46 Illinois 35 
+
+2024-03-30 15:48:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:08.730Z 4 Texas 46 Pennsylvania 43 New York 40 California 35 Illinois 31 
+
+2024-03-30 15:48:23.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:23.730Z 3 Texas 54 New York 47 Pennsylvania 47 California 46 Illinois 35 
+
+2024-03-30 15:48:23.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:23.731Z 4 Texas 46 New York 44 Pennsylvania 43 California 35 Illinois 31 
+
+2024-03-30 15:48:38.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:38.731Z 3 Texas 54 California 49 New York 47 Pennsylvania 47 Illinois 35 
+
+2024-03-30 15:48:38.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:38.732Z 4 Texas 48 New York 44 Pennsylvania 43 California 35 Illinois 31 
+
+2024-03-30 15:48:53.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:53.730Z 3 Texas 54 Pennsylvania 51 California 49 New York 47 Illinois 35 
+
+2024-03-30 15:48:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:48:53.731Z 4 Texas 48 New York 45 Pennsylvania 43 California 35 Illinois 31 
+
+2024-03-30 15:49:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:08.731Z 3 Texas 54 California 51 Pennsylvania 51 New York 47 Illinois 35 
+
+2024-03-30 15:49:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:08.731Z 4 Texas 48 Pennsylvania 46 New York 45 California 35 Illinois 31 
+
+2024-03-30 15:49:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:23.731Z 3 Texas 54 New York 52 California 51 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:49:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:23.732Z 4 Texas 51 Pennsylvania 46 New York 45 California 35 Illinois 31 
+
+2024-03-30 15:49:38.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:38.730Z 3 Texas 54 New York 53 California 51 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:49:38.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:38.731Z 4 Texas 51 Pennsylvania 46 New York 45 California 35 Illinois 31 
+
+2024-03-30 15:49:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:53.731Z 3 Texas 54 New York 53 California 51 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:49:53.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:49:53.731Z 4 Texas 51 New York 48 Pennsylvania 46 California 35 Illinois 31 
+
+2024-03-30 15:50:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:08.730Z 3 New York 54 Texas 54 California 51 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:50:08.730 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:08.730Z 4 Texas 51 New York 48 Pennsylvania 46 California 35 Illinois 31 
+
+2024-03-30 15:50:23.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:23.731Z 3 Texas 60 New York 54 California 51 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:50:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:23.732Z 4 Texas 51 New York 49 Pennsylvania 46 California 35 Illinois 31 
+
+2024-03-30 15:50:38.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:38.731Z 3 Texas 60 California 55 New York 54 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:50:38.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:38.732Z 4 Texas 51 California 50 Pennsylvania 50 New York 49 Illinois 31 
+
+2024-03-30 15:50:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:53.731Z 3 Texas 60 New York 56 California 55 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:50:53.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:50:53.731Z 4 Texas 51 California 50 Pennsylvania 50 New York 49 Illinois 31 
+
+2024-03-30 15:51:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:08.731Z 3 Texas 60 New York 56 California 55 Pennsylvania 51 Illinois 35 
+
+2024-03-30 15:51:08.731 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:08.731Z 4 Pennsylvania 51 Texas 51 California 50 New York 49 Illinois 31 
+
+2024-03-30 15:51:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:23.731Z 3 Texas 60 New York 56 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:51:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:23.732Z 4 Pennsylvania 52 Texas 51 California 50 New York 49 Illinois 31 
+
+2024-03-30 15:51:38.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:38.732Z 3 Texas 65 New York 56 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:51:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:38.733Z 4 Texas 57 New York 52 Pennsylvania 52 California 50 Illinois 31 
+
+2024-03-30 15:51:53.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:53.732Z 3 Texas 66 New York 56 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:51:53.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:51:53.732Z 4 Texas 57 New York 52 Pennsylvania 52 California 50 Illinois 31 
+
+2024-03-30 15:52:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:08.733Z 3 Texas 66 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:52:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:08.733Z 4 Texas 57 New York 53 Pennsylvania 52 California 50 Illinois 31 
+
+2024-03-30 15:52:23.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:23.732Z 3 Texas 67 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:52:23.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:23.732Z 4 Texas 57 New York 53 Pennsylvania 52 California 50 Illinois 31 
+
+2024-03-30 15:52:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:38.733Z 3 Texas 67 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:52:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:38.733Z 4 Texas 57 New York 55 Pennsylvania 52 California 50 Missouri 31 
+
+2024-03-30 15:52:53.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:53.733Z 3 Texas 67 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:52:53.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:52:53.733Z 4 Texas 57 New York 55 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:53:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:08.733Z 3 Texas 69 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:53:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:08.733Z 4 Texas 61 New York 56 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:53:23.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:23.732Z 3 Texas 70 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:53:23.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:23.733Z 4 Texas 61 New York 57 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:53:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:38.733Z 3 Texas 70 New York 61 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:53:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:38.733Z 4 Texas 61 New York 57 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:53:53.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:53.732Z 3 Texas 70 New York 66 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:53:53.732 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:53:53.732Z 4 Texas 61 New York 57 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:54:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:08.733Z 3 Texas 72 New York 66 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:54:08.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:08.733Z 4 Texas 65 New York 57 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:54:23.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:23.733Z 3 Texas 73 New York 66 California 55 Pennsylvania 51 Illinois 45 
+
+2024-03-30 15:54:23.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:23.733Z 4 Texas 65 New York 60 Pennsylvania 52 California 50 Illinois 42 
+
+2024-03-30 15:54:38.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:38.733Z 3 Texas 73 Pennsylvania 68 New York 66 California 55 Illinois 45 
+
+2024-03-30 15:54:38.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:38.734Z 4 Texas 65 Pennsylvania 61 New York 60 California 50 Illinois 42 
+
+2024-03-30 15:54:53.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:53.734Z 3 Texas 73 Pennsylvania 68 New York 66 California 55 Illinois 45 
+
+2024-03-30 15:54:53.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:54:53.734Z 4 Texas 65 New York 61 Pennsylvania 61 California 60 Illinois 42 
+
+2024-03-30 15:55:08.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:08.734Z 3 Texas 76 New York 69 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:55:08.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:08.734Z 4 Texas 68 New York 61 Pennsylvania 61 California 60 Illinois 42 
+
+2024-03-30 15:55:23.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:23.734Z 3 Texas 76 New York 70 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:55:23.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:23.734Z 4 Texas 68 New York 63 Pennsylvania 61 California 60 Illinois 42 
+
+2024-03-30 15:55:38.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:38.734Z 3 Texas 76 New York 71 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:55:38.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:38.734Z 4 Texas 68 New York 63 Pennsylvania 61 California 60 Illinois 42 
+
+2024-03-30 15:55:53.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:53.733Z 3 Texas 76 New York 72 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:55:53.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:55:53.733Z 4 Texas 68 Pennsylvania 64 New York 63 California 60 Illinois 42 
+
+2024-03-30 15:56:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:08.733Z 3 Texas 79 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:56:08.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:08.734Z 4 Texas 70 Pennsylvania 64 New York 63 California 60 Illinois 42 
+
+2024-03-30 15:56:23.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:23.734Z 3 Texas 81 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:56:23.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:23.734Z 4 Texas 71 Pennsylvania 64 New York 63 California 60 Illinois 42 
+
+2024-03-30 15:56:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:38.733Z 3 Texas 81 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:56:38.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:38.733Z 4 Texas 71 Pennsylvania 64 New York 63 California 60 Illinois 50 
+
+2024-03-30 15:56:53.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:53.734Z 3 Texas 81 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:56:53.734 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:56:53.734Z 4 Texas 71 Pennsylvania 64 New York 63 California 60 Illinois 50 
+
+2024-03-30 15:57:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:08.733Z 3 Texas 83 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:57:08.733 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:08.733Z 4 Texas 72 Pennsylvania 64 New York 63 California 60 Illinois 50 
+
+2024-03-30 15:57:23.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:23.734Z 3 Texas 83 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:57:23.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:23.735Z 4 Texas 72 California 66 Pennsylvania 64 New York 63 Illinois 50 
+
+2024-03-30 15:57:38.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:38.735Z 3 Texas 83 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:57:38.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:38.735Z 4 Texas 72 California 67 Pennsylvania 64 New York 63 Illinois 50 
+
+2024-03-30 15:57:53.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:53.736Z 3 Texas 86 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:57:53.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:57:53.736Z 4 Texas 76 California 67 Pennsylvania 64 New York 63 Illinois 50 
+
+2024-03-30 15:58:08.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:08.735Z 3 Texas 86 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:58:08.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:08.735Z 4 Texas 76 New York 70 California 67 Pennsylvania 64 Illinois 50 
+
+2024-03-30 15:58:23.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:23.736Z 3 Texas 87 New York 73 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:58:23.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:23.736Z 4 Texas 76 New York 70 California 67 Pennsylvania 64 Illinois 50 
+
+2024-03-30 15:58:38.735 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:38.735Z 3 Texas 88 New York 80 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:58:38.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:38.735Z 4 Texas 76 New York 71 California 67 Pennsylvania 64 Illinois 50 
+
+2024-03-30 15:58:53.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:53.736Z 3 Texas 88 New York 81 Pennsylvania 68 California 55 Illinois 45 
+
+2024-03-30 15:58:53.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:58:53.737Z 4 Texas 76 New York 71 California 70 Pennsylvania 64 Illinois 54 
+
+2024-03-30 15:59:08.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:08.736Z 3 Texas 88 New York 81 California 81 Pennsylvania 68 Illinois 45 
+
+2024-03-30 15:59:08.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:08.736Z 4 Texas 78 New York 72 California 70 Pennsylvania 64 Illinois 54 
+
+2024-03-30 15:59:23.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:23.735Z 3 Texas 90 New York 81 California 81 Pennsylvania 68 Illinois 45 
+
+2024-03-30 15:59:23.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:23.736Z 4 Texas 78 New York 73 Pennsylvania 73 California 70 Illinois 54 
+
+2024-03-30 15:59:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:38.737Z 3 Texas 91 New York 81 California 81 Pennsylvania 68 Illinois 45 
+
+2024-03-30 15:59:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:38.737Z 4 Texas 78 New York 73 Pennsylvania 73 California 70 Illinois 56 
+
+2024-03-30 15:59:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:53.737Z 3 Texas 92 Pennsylvania 84 New York 81 California 81 Illinois 45 
+
+2024-03-30 15:59:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T21:59:53.738Z 4 Texas 78 New York 73 Pennsylvania 73 California 70 Illinois 56 
+
+2024-03-30 16:00:08.736 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:08.736Z 3 Texas 93 Pennsylvania 84 New York 81 California 81 Illinois 45 
+
+2024-03-30 16:00:08.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:08.737Z 4 Texas 82 New York 73 Pennsylvania 73 California 70 Illinois 56 
+
+2024-03-30 16:00:23.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:23.737Z 3 Texas 93 Pennsylvania 84 New York 81 California 81 Illinois 45 
+
+2024-03-30 16:00:23.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:23.737Z 4 Texas 82 New York 73 Pennsylvania 73 California 70 Illinois 56 
+
+2024-03-30 16:00:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:38.737Z 3 Texas 93 New York 85 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:00:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:38.737Z 4 Texas 82 New York 73 Pennsylvania 73 California 70 Illinois 56 
+
+2024-03-30 16:00:53.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:53.737Z 3 Texas 93 New York 86 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:00:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:00:53.738Z 4 Texas 82 California 74 New York 73 Pennsylvania 73 Illinois 56 
+
+2024-03-30 16:01:08.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:08.737Z 3 Texas 94 New York 87 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:01:08.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:08.737Z 4 Texas 82 Pennsylvania 76 New York 75 California 74 Illinois 56 
+
+2024-03-30 16:01:23.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:23.737Z 3 Texas 95 New York 87 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:01:23.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:23.737Z 4 Texas 82 Pennsylvania 76 New York 75 California 74 Illinois 56 
+
+2024-03-30 16:01:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:38.737Z 3 Texas 96 New York 87 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:01:38.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:38.737Z 4 Texas 82 Pennsylvania 77 New York 75 California 74 Illinois 56 
+
+2024-03-30 16:01:53.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:53.737Z 3 Texas 96 New York 88 Pennsylvania 84 California 81 Illinois 45 
+
+2024-03-30 16:01:53.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:01:53.737Z 4 Texas 82 Pennsylvania 77 New York 75 California 74 Illinois 59 
+
+2024-03-30 16:02:08.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:08.737Z 3 Texas 96 New York 88 Pennsylvania 84 California 81 Missouri 50 
+
+2024-03-30 16:02:08.737 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:08.737Z 4 Texas 82 New York 77 Pennsylvania 77 California 74 Illinois 59 
+
+2024-03-30 16:02:23.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:23.738Z 3 Texas 96 New York 88 Pennsylvania 84 California 81 Missouri 50 
+
+2024-03-30 16:02:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:23.739Z 4 Texas 82 New York 77 Pennsylvania 77 California 74 Illinois 59 
+
+2024-03-30 16:02:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:38.738Z 3 Texas 98 New York 88 Pennsylvania 84 California 81 Missouri 50 
+
+2024-03-30 16:02:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:38.738Z 4 Texas 82 New York 77 Pennsylvania 77 California 74 Illinois 59 
+
+2024-03-30 16:02:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:53.738Z 3 Texas 98 New York 90 Pennsylvania 84 California 81 Missouri 50 
+
+2024-03-30 16:02:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:02:53.739Z 4 Texas 87 New York 77 Pennsylvania 77 California 74 Illinois 59 
+
+2024-03-30 16:03:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:08.738Z 3 Texas 98 Pennsylvania 91 New York 90 California 81 Missouri 50 
+
+2024-03-30 16:03:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:08.739Z 4 Texas 87 New York 77 Pennsylvania 77 California 74 Illinois 59 
+
+2024-03-30 16:03:23.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:23.738Z 3 Texas 98 Pennsylvania 91 New York 90 California 81 Missouri 50 
+
+2024-03-30 16:03:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:23.739Z 4 Texas 87 Pennsylvania 82 New York 77 California 74 Illinois 59 
+
+2024-03-30 16:03:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:38.738Z 3 Texas 101 Pennsylvania 91 New York 90 California 81 Missouri 50 
+
+2024-03-30 16:03:38.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:38.738Z 4 Texas 87 Pennsylvania 82 California 81 New York 77 Illinois 59 
+
+2024-03-30 16:03:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:53.738Z 3 Texas 101 New York 93 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:03:53.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:03:53.738Z 4 Texas 87 Pennsylvania 83 California 81 New York 77 Illinois 59 
+
+2024-03-30 16:04:08.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:08.738Z 3 Texas 101 New York 93 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:04:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:08.739Z 4 Texas 87 New York 83 Pennsylvania 83 California 81 Illinois 59 
+
+2024-03-30 16:04:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:23.739Z 3 Texas 101 New York 93 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:04:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:23.739Z 4 Texas 87 New York 84 California 83 Pennsylvania 83 Illinois 59 
+
+2024-03-30 16:04:38.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:38.739Z 3 Texas 104 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:04:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:38.740Z 4 Texas 87 New York 84 California 83 Pennsylvania 83 Illinois 59 
+
+2024-03-30 16:04:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:53.739Z 3 Texas 105 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:04:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:04:53.739Z 4 Texas 93 New York 84 California 83 Pennsylvania 83 Illinois 59 
+
+2024-03-30 16:05:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:08.738Z 3 Texas 105 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:05:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:08.739Z 4 Texas 93 Pennsylvania 87 New York 84 California 83 Illinois 65 
+
+2024-03-30 16:05:23.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:23.738Z 3 Texas 106 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:05:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:23.739Z 4 Texas 93 Pennsylvania 87 New York 84 California 83 Illinois 65 
+
+2024-03-30 16:05:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:38.738Z 3 Texas 106 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:05:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:38.738Z 4 Texas 93 New York 87 Pennsylvania 87 California 83 Illinois 65 
+
+2024-03-30 16:05:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:53.738Z 3 Texas 107 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:05:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:05:53.739Z 4 Texas 96 New York 87 California 87 Pennsylvania 87 Illinois 65 
+
+2024-03-30 16:06:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:08.739Z 3 Texas 107 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:06:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:08.739Z 4 Texas 96 Pennsylvania 89 New York 87 California 87 Illinois 65 
+
+2024-03-30 16:06:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:23.739Z 3 Texas 109 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:06:23.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:23.740Z 4 Texas 96 New York 89 Pennsylvania 89 California 87 Illinois 65 
+
+2024-03-30 16:06:38.738 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:38.738Z 3 Texas 110 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:06:38.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:38.738Z 4 Texas 96 New York 91 Pennsylvania 89 California 87 Illinois 65 
+
+2024-03-30 16:06:53.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:53.739Z 3 Texas 111 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:06:53.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:06:53.739Z 4 Texas 96 New York 91 Pennsylvania 89 California 87 Illinois 70 
+
+2024-03-30 16:07:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:08.739Z 3 Texas 112 New York 95 Pennsylvania 91 California 81 Missouri 50 
+
+2024-03-30 16:07:08.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:08.739Z 4 Texas 100 Pennsylvania 92 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:07:23.739 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:23.739Z 3 Texas 113 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:07:23.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:23.740Z 4 Texas 101 Pennsylvania 92 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:07:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:38.740Z 3 Texas 113 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:07:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:38.741Z 4 Texas 101 Pennsylvania 92 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:07:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:53.740Z 3 Texas 113 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:07:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:07:53.741Z 4 Texas 101 Pennsylvania 94 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:08:08.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:08.740Z 3 Texas 115 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:08:08.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:08.740Z 4 Texas 101 Pennsylvania 94 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:08:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:23.741Z 3 Texas 116 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:08:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:23.741Z 4 Texas 104 Pennsylvania 94 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:08:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:38.740Z 3 Texas 117 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:08:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:38.741Z 4 Texas 105 Pennsylvania 97 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:08:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:53.741Z 3 Texas 118 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:08:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:08:53.741Z 4 Texas 105 Pennsylvania 97 New York 91 California 87 Illinois 70 
+
+2024-03-30 16:09:08.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:08.740Z 3 Texas 118 New York 95 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:09:08.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:08.740Z 4 Texas 105 New York 97 Pennsylvania 97 California 87 Illinois 70 
+
+2024-03-30 16:09:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:23.741Z 3 Texas 118 New York 109 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:09:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:23.741Z 4 Texas 105 New York 97 Pennsylvania 97 California 87 Illinois 70 
+
+2024-03-30 16:09:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:38.740Z 3 Texas 120 New York 109 Pennsylvania 91 California 81 Florida 57 
+
+2024-03-30 16:09:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:38.740Z 4 Texas 105 New York 98 Pennsylvania 97 California 87 Illinois 76 
+
+2024-03-30 16:09:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:53.741Z 3 Texas 120 New York 109 California 109 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:09:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:09:53.741Z 4 Texas 105 New York 99 California 98 Pennsylvania 97 Illinois 76 
+
+2024-03-30 16:10:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:08.741Z 3 Texas 121 California 110 New York 109 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:10:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:08.741Z 4 Texas 105 New York 100 California 98 Pennsylvania 97 Illinois 76 
+
+2024-03-30 16:10:23.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:23.740Z 3 Texas 121 New York 112 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:10:23.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:23.740Z 4 Texas 105 New York 100 California 99 Pennsylvania 97 Illinois 76 
+
+2024-03-30 16:10:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:38.740Z 3 Texas 124 New York 112 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:10:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:38.740Z 4 Texas 105 New York 100 California 100 Pennsylvania 97 Illinois 76 
+
+2024-03-30 16:10:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:53.740Z 3 Texas 124 New York 114 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:10:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:10:53.741Z 4 Texas 105 Pennsylvania 102 New York 100 California 100 Illinois 76 
+
+2024-03-30 16:11:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:08.740Z 3 Texas 124 New York 114 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:11:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:08.741Z 4 Texas 105 New York 103 Pennsylvania 103 California 100 Illinois 78 
+
+2024-03-30 16:11:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:23.740Z 3 Texas 124 New York 114 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:11:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:23.741Z 4 Texas 105 Pennsylvania 104 New York 103 California 100 Illinois 78 
+
+2024-03-30 16:11:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:38.741Z 3 Texas 124 New York 114 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:11:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:38.741Z 4 Pennsylvania 105 Texas 105 New York 103 California 100 Illinois 78 
+
+2024-03-30 16:11:53.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:53.740Z 3 Texas 127 New York 116 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:11:53.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:11:53.740Z 4 New York 105 Pennsylvania 105 Texas 105 California 100 Illinois 78 
+
+2024-03-30 16:12:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:08.741Z 3 Texas 127 New York 116 California 110 Pennsylvania 91 Florida 57 
+
+2024-03-30 16:12:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:08.741Z 4 New York 106 Pennsylvania 105 Texas 105 California 104 Illinois 78 
+
+2024-03-30 16:12:23.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:23.740Z 3 Texas 127 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:12:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:23.740Z 4 New York 106 California 105 Pennsylvania 105 Texas 105 Illinois 78 
+
+2024-03-30 16:12:38.740 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:38.740Z 3 Texas 130 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:12:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:38.741Z 4 Texas 117 New York 106 California 106 Pennsylvania 105 Illinois 78 
+
+2024-03-30 16:12:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:53.741Z 3 Texas 130 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:12:53.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:12:53.741Z 4 Texas 118 New York 108 California 106 Pennsylvania 105 Illinois 78 
+
+2024-03-30 16:13:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:08.741Z 3 Texas 131 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:13:08.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:08.741Z 4 Texas 118 New York 108 California 108 Pennsylvania 105 Illinois 78 
+
+2024-03-30 16:13:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:23.741Z 3 Texas 132 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:13:23.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:23.741Z 4 Texas 120 New York 110 California 108 Pennsylvania 105 Illinois 84 
+
+2024-03-30 16:13:38.741 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:38.741Z 3 Texas 132 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:13:38.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:38.741Z 4 Texas 120 New York 110 California 108 Pennsylvania 105 Illinois 84 
+
+2024-03-30 16:13:53.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:53.742Z 3 Texas 133 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:13:53.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:13:53.742Z 4 Texas 120 New York 110 California 108 Pennsylvania 105 Illinois 84 
+
+2024-03-30 16:14:08.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:08.742Z 3 Texas 133 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:14:08.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:08.742Z 4 Texas 120 Pennsylvania 112 New York 110 California 108 Illinois 84 
+
+2024-03-30 16:14:23.742 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:23.742Z 3 Texas 133 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:14:23.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:23.743Z 4 Texas 120 New York 112 Pennsylvania 112 California 108 Illinois 84 
+
+2024-03-30 16:14:38.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:38.743Z 3 Texas 136 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:14:38.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:38.743Z 4 Texas 120 New York 112 California 112 Pennsylvania 112 Illinois 84 
+
+2024-03-30 16:14:53.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:53.743Z 3 Texas 136 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:14:53.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:14:53.743Z 4 Texas 120 Pennsylvania 114 New York 112 California 112 Illinois 84 
+
+2024-03-30 16:15:08.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:08.743Z 3 Texas 136 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:15:08.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:08.743Z 4 Texas 120 Pennsylvania 114 New York 112 California 112 Illinois 84 
+
+2024-03-30 16:15:23.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:23.744Z 3 Texas 138 New York 116 California 110 Pennsylvania 91 Michigan 64 
+
+2024-03-30 16:15:23.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:23.744Z 4 Texas 126 Pennsylvania 116 New York 112 California 112 Illinois 88 
+
+2024-03-30 16:15:38.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:38.744Z 3 Texas 138 Pennsylvania 128 New York 116 California 110 Michigan 64 
+
+2024-03-30 16:15:38.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:38.744Z 4 Texas 126 Pennsylvania 117 New York 112 California 112 Illinois 88 
+
+2024-03-30 16:15:53.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:53.744Z 3 Texas 140 Pennsylvania 128 New York 116 California 110 Florida 71 
+
+2024-03-30 16:15:53.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:15:53.744Z 4 Texas 126 Pennsylvania 117 New York 112 California 112 Illinois 89 
+
+2024-03-30 16:16:08.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:08.744Z 3 Texas 140 Pennsylvania 128 New York 116 California 110 Florida 71 
+
+2024-03-30 16:16:08.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:08.744Z 4 Texas 126 New York 118 Pennsylvania 118 California 112 Illinois 89 
+
+2024-03-30 16:16:23.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:23.743Z 3 Texas 142 Pennsylvania 128 New York 116 California 110 Florida 71 
+
+2024-03-30 16:16:23.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:23.744Z 4 Texas 126 Pennsylvania 119 New York 118 California 112 Illinois 89 
+
+2024-03-30 16:16:38.743 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:38.743Z 3 Texas 142 Pennsylvania 128 New York 116 California 110 Florida 71 
+
+2024-03-30 16:16:38.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:38.744Z 4 Texas 126 Pennsylvania 119 New York 118 California 112 Illinois 89 
+
+2024-03-30 16:16:53.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:53.743Z 3 Texas 142 Pennsylvania 128 New York 116 California 110 Florida 71 
+
+2024-03-30 16:16:53.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:16:53.744Z 4 Texas 126 Pennsylvania 119 New York 118 California 112 Illinois 89 
+
+2024-03-30 16:17:08.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:08.744Z 3 Texas 142 Pennsylvania 133 New York 116 California 110 Florida 71 
+
+2024-03-30 16:17:08.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:08.745Z 4 Texas 131 Pennsylvania 121 New York 120 California 112 Illinois 89 
+
+2024-03-30 16:17:23.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:23.744Z 3 Texas 144 Pennsylvania 133 New York 116 California 110 Florida 71 
+
+2024-03-30 16:17:23.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:23.744Z 4 Texas 131 Pennsylvania 121 New York 120 California 119 Illinois 92 
+
+2024-03-30 16:17:38.744 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:38.744Z 3 Texas 144 Pennsylvania 134 New York 116 California 110 Florida 71 
+
+2024-03-30 16:17:38.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:38.745Z 4 Texas 131 Pennsylvania 121 New York 120 California 119 Illinois 92 
+
+2024-03-30 16:17:53.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:53.745Z 3 Texas 146 Pennsylvania 134 New York 116 California 110 Illinois 102 
+
+2024-03-30 16:17:53.745 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:17:53.745Z 4 Texas 133 Pennsylvania 123 New York 122 California 119 Illinois 92 
+
+2024-03-30 16:18:08.746 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:08.745Z 3 Texas 147 Pennsylvania 134 New York 116 California 110 Illinois 102 
+
+2024-03-30 16:18:08.746 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:08.746Z 4 Texas 134 Pennsylvania 123 New York 122 California 119 Illinois 92 
+
+2024-03-30 16:18:23.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:23.746Z 3 Texas 148 New York 136 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:18:23.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:23.747Z 4 Texas 134 Pennsylvania 124 New York 122 California 119 Illinois 92 
+
+2024-03-30 16:18:38.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:38.746Z 3 Texas 148 New York 137 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:18:38.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:38.747Z 4 Texas 134 New York 124 Pennsylvania 124 California 119 Illinois 92 
+
+2024-03-30 16:18:53.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:53.747Z 3 Texas 150 New York 137 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:18:53.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:18:53.747Z 4 Texas 134 Pennsylvania 125 New York 124 California 123 Illinois 92 
+
+2024-03-30 16:19:08.746 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:08.746Z 3 Texas 151 New York 137 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:19:08.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:08.747Z 4 Texas 134 Pennsylvania 125 New York 124 California 123 Illinois 92 
+
+2024-03-30 16:19:23.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:23.747Z 3 Texas 152 New York 137 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:19:23.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:23.747Z 4 Texas 134 Pennsylvania 125 New York 124 California 123 Illinois 92 
+
+2024-03-30 16:19:38.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:38.747Z 3 Texas 152 New York 137 Pennsylvania 134 California 110 Illinois 102 
+
+2024-03-30 16:19:38.747 E.NormalizedReportBolt Thread-17-report-bolt-executor[13, 14] [INFO] 2024-03-30T22:19:38.747Z 4 Texas 134 California 126 Pennsylvania 125 New York 124 Illinois 92 
+

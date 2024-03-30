@@ -1,0 +1,1441 @@
+2024-03-30 14:49:24.086 o.a.s.v.ConfigValidation main [INFO] Will use [class org.apache.storm.Config] for validation
+2024-03-30 14:49:24.164 o.a.s.d.w.LogConfigManager main [INFO] Started with log levels: {=INFO, STDERR=INFO, STDOUT=INFO, org.apache.storm.metric.LoggingMetricsConsumer=INFO}
+2024-03-30 14:49:24.192 o.a.s.d.w.Worker main [INFO] Adding shutdown hook with kill in 3 secs
+2024-03-30 14:49:24.208 o.a.s.d.w.Worker main [INFO] Launching worker for forecast-topology-15-1711831758 on 63f379b8-73fd-44b3-907c-bdbdcf40d974-129.82.44.141:30522 with id a32b0a39-4f58-4903-9594-dd1c583e1e4a and conf {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, storm.exhibitor.port=30529, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, storm.oci.cgroup.root=/sys/fs/cgroup, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, supervisor.localizer.update.blob.interval.secs=30, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, storm.oci.nscd.dir=/var/run/nscd, java.home=/usr/lib/jvm/java-1.8.0-openjdk/jre, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemory=org.apache.storm.metrics2.cgroup.CGroupMemoryUsage, CGroupMemoryLimit=org.apache.storm.metrics2.cgroup.CGroupMemoryLimit, CGroupCpu=org.apache.storm.metrics2.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metrics2.cgroup.CGroupCpuGuarantee, CGroupCpuGuaranteeByCfsQuota=org.apache.storm.metrics2.cgroup.CGroupCpuGuaranteeByCfsQuota, CGroupCpuStat=org.apache.storm.metrics2.cgroup.CGroupCpuStat}, logviewer.port=30531, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], worker.max.timeout.secs=600, blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, topology.ras.acker.executors.per.worker=1, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[cheyenne.cs.colostate.edu], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, blacklist.scheduler.assume.supervisor.bad.based.on.bad.slot=true, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[30522, 30523, 30524, 30525], topology.stats.sample.rate=0.05, storm.local.dir=/tmp/storm_dilochan, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, storm.oci.cgroup.parent=/storm, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/lib/jvm/java-1.8.0-openjdk, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.worker.shared.thread.pool.size=4, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=30521, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=30530, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[salem.cs.colostate.edu], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=30526, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, topology.ras.one.executor.per.worker=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=30528, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=false, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/tmp/storm_dilochan, topology.spout.recvq.skips=3, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, topology.ras.one.component.per.worker=false, ui.host=0.0.0.0, supervisor.thrift.port=30527, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2024-03-30 14:49:24.210 o.a.s.s.u.o.l.s.c.SysOutOverSLF4JInitialiser main [WARN] Your logging framework class org.apache.logging.slf4j.Log4jLogger is not known - if it needs access to the standard println methods on the console you will need to register it by calling registerLoggingSystemPackage
+2024-03-30 14:49:24.213 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Replaced standard System.out and System.err PrintStreams with SLF4JPrintStreams
+2024-03-30 14:49:24.213 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Redirected System.out and System.err to SLF4J for this context
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:zookeeper.version=3.5.9-83df9301aa5c2a5d284a9940177808c01bc35cef, built on 01/06/2021 20:03 GMT
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:host.name=denver.cs.colostate.edu
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.version=1.8.0_402
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.vendor=Red Hat, Inc.
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.402.b06-2.el8.x86_64/jre
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.class.path=/usr/local/storm/2.4.0/lib-worker/log4j-over-slf4j-1.7.36.jar:/usr/local/storm/2.4.0/lib-worker/storm-shaded-deps-2.4.0.jar:/usr/local/storm/2.4.0/lib-worker/metrics-graphite-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/objenesis-2.1.jar:/usr/local/storm/2.4.0/lib-worker/log4j-api-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/kryo-3.0.3.jar:/usr/local/storm/2.4.0/lib-worker/reflectasm-1.10.1.jar:/usr/local/storm/2.4.0/lib-worker/log4j-slf4j-impl-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/slf4j-api-1.7.36.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.activation-1.2.1.jar:/usr/local/storm/2.4.0/lib-worker/metrics-jvm-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/storm-client-2.4.0.jar:/usr/local/storm/2.4.0/lib-worker/javax.annotation-api-1.3.2.jar:/usr/local/storm/2.4.0/lib-worker/asm-5.0.3.jar:/usr/local/storm/2.4.0/lib-worker/minlog-1.3.0.jar:/usr/local/storm/2.4.0/lib-worker/metrics-core-3.2.6.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.xml.bind-api-2.3.2.jar:/usr/local/storm/2.4.0/lib-worker/log4j-core-2.17.1.jar:/usr/local/storm/2.4.0/lib-worker/jakarta.activation-api-1.2.1.jar:/usr/local/storm/2.4.0/extlib/*:/s/chopin/k/grad/dilochan/stormConf:/tmp/storm_dilochan/supervisor/stormdist/forecast-topology-15-1711831758/stormjar.jar
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.library.path=/tmp/storm_dilochan/supervisor/stormdist/forecast-topology-15-1711831758/resources/Linux-amd64:/tmp/storm_dilochan/supervisor/stormdist/forecast-topology-15-1711831758/resources:/usr/lib/jvm/java-1.8.0-openjdk
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.io.tmpdir=/tmp/storm_dilochan/workers/a32b0a39-4f58-4903-9594-dd1c583e1e4a/tmp
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.compiler=<NA>
+2024-03-30 14:49:24.242 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.name=Linux
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.arch=amd64
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.version=4.18.0-513.11.1.el8_9.x86_64
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.name=dilochan
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.home=/s/chopin/k/grad/dilochan
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.dir=/tmp/storm_dilochan/workers/a32b0a39-4f58-4903-9594-dd1c583e1e4a
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.free=191MB
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.max=245MB
+2024-03-30 14:49:24.243 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.memory.total=245MB
+2024-03-30 14:49:24.243 o.a.s.s.o.a.c.u.Compatibility main [INFO] Using emulated InjectSessionExpiration
+2024-03-30 14:49:24.262 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2024-03-30 14:49:24.262 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2024-03-30 14:49:24.264 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=cheyenne.cs.colostate.edu:30521 sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@4331d187
+2024-03-30 14:49:24.266 o.a.s.s.o.a.z.c.X509Util main [INFO] Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2024-03-30 14:49:24.269 o.a.s.s.o.a.z.ClientCnxnSocket main [INFO] jute.maxbuffer value is 4194304 Bytes
+2024-03-30 14:49:24.274 o.a.s.s.o.a.z.ClientCnxn main [INFO] zookeeper.request.timeout value is 0. feature enabled=
+2024-03-30 14:49:24.277 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Opening socket connection to server cheyenne.cs.colostate.edu/129.82.44.137:30521. Will not attempt to authenticate using SASL (unknown error)
+2024-03-30 14:49:24.281 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Socket connection established, initiating session, client: /129.82.44.141:51214, server: cheyenne.cs.colostate.edu/129.82.44.137:30521
+2024-03-30 14:49:24.284 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Session establishment complete on server cheyenne.cs.colostate.edu/129.82.44.137:30521, sessionid = 0x1002332a12002c6, negotiated timeout = 20000
+2024-03-30 14:49:24.293 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2024-03-30 14:49:24.309 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2024-03-30 14:49:24.316 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl Curator-Framework-0 [INFO] backgroundOperationsLoop exiting
+2024-03-30 14:49:24.322 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 14:49:24.434 o.a.s.s.o.a.z.ZooKeeper main [INFO] Session: 0x1002332a12002c6 closed
+2024-03-30 14:49:24.435 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2024-03-30 14:49:24.435 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2024-03-30 14:49:24.435 o.a.s.s.o.a.z.ClientCnxn main-EventThread [INFO] EventThread shut down for session: 0x1002332a12002c6
+2024-03-30 14:49:24.436 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=cheyenne.cs.colostate.edu:30521/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@6986bbaf
+2024-03-30 14:49:24.436 o.a.s.s.o.a.z.ClientCnxnSocket main [INFO] jute.maxbuffer value is 4194304 Bytes
+2024-03-30 14:49:24.437 o.a.s.s.o.a.z.ClientCnxn main [INFO] zookeeper.request.timeout value is 0. feature enabled=
+2024-03-30 14:49:24.502 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2024-03-30 14:49:24.508 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Opening socket connection to server cheyenne.cs.colostate.edu/129.82.44.137:30521. Will not attempt to authenticate using SASL (unknown error)
+2024-03-30 14:49:24.513 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Socket connection established, initiating session, client: /129.82.44.141:51226, server: cheyenne.cs.colostate.edu/129.82.44.137:30521
+2024-03-30 14:49:24.515 o.a.s.s.o.a.z.ClientCnxn main-SendThread(cheyenne.cs.colostate.edu:30521) [INFO] Session establishment complete on server cheyenne.cs.colostate.edu/129.82.44.137:30521, sessionid = 0x1002332a12002c9, negotiated timeout = 20000
+2024-03-30 14:49:24.515 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2024-03-30 14:49:24.517 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 14:49:24.517 o.a.s.s.o.a.c.f.i.EnsembleTracker main-EventThread [INFO] New config event received: {}
+2024-03-30 14:49:24.545 o.a.s.m.StormMetricRegistry main [INFO] Starting metrics reporters...
+2024-03-30 14:49:24.547 o.a.s.s.a.ClientAuthUtils main [INFO] Got AutoCreds []
+2024-03-30 14:49:24.581 o.a.s.m.TransportFactory main [INFO] Storm peer transport plugin:org.apache.storm.messaging.netty.Context
+2024-03-30 14:49:24.772 o.a.s.d.w.WorkerState main [INFO] Registering IConnectionCallbacks for 63f379b8-73fd-44b3-907c-bdbdcf40d974-129.82.44.141:30522
+2024-03-30 14:49:24.794 o.a.s.m.n.Server main [INFO] Create Netty Server Netty-server-localhost-30522, buffer_size: 5242880, maxWorkers: 1
+2024-03-30 14:49:24.852 o.a.s.d.w.WorkerState Netty-server-localhost-30522-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=a32b0a39-4f58-4903-9594-dd1c583e1e4a, bpStatusId=1, bpTasks=[], nonBpTasks=[4, 11, 12]}
+2024-03-30 14:49:24.863 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to boston.cs.colostate.edu:30522, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 14:49:24.875 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to carson-city.cs.colostate.edu:30522, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 14:49:24.875 o.a.s.m.n.Client main [INFO] Creating Netty Client, connecting to concord.cs.colostate.edu:30522, bufferSize: 5242880, lowWatermark: 8388608, highWatermark: 16777216
+2024-03-30 14:49:24.925 o.a.s.d.w.WorkerState Netty-server-localhost-30522-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=a32b0a39-4f58-4903-9594-dd1c583e1e4a, bpStatusId=2, bpTasks=[], nonBpTasks=[4, 11, 12]}
+2024-03-30 14:49:25.020 o.a.s.d.w.WorkerState Netty-server-localhost-30522-worker-1 [INFO] Sending BackPressure status to new client. BPStatus: {worker=a32b0a39-4f58-4903-9594-dd1c583e1e4a, bpStatusId=6, bpTasks=[], nonBpTasks=[4, 11, 12]}
+2024-03-30 14:49:25.042 o.a.s.e.Executor main [INFO] Loading executor tasks __system:[-1, -1]
+2024-03-30 14:49:25.042 o.a.s.e.Executor main [INFO] Finished loading executor __system:[-1, -1]
+2024-03-30 14:49:25.043 o.a.s.e.Executor main [INFO] Loading executor tasks __acker:[4, 4]
+2024-03-30 14:49:25.043 o.a.s.e.Executor main [INFO] Finished loading executor __acker:[4, 4]
+2024-03-30 14:49:25.043 o.a.s.e.Executor main [INFO] Loading executor tasks forecast-report-bolt:[11, 12]
+2024-03-30 14:49:25.043 o.a.s.e.Executor main [INFO] Finished loading executor forecast-report-bolt:[11, 12]
+2024-03-30 14:49:25.051 o.a.s.d.w.Worker main [INFO] Flush Tuple generation disabled. producerBatchSize=1, xferBatchSize=1, flushIntervalMillis=1
+2024-03-30 14:49:25.051 o.a.s.d.w.Worker main [INFO] BackPressure status change checking will be performed every 50 millis
+2024-03-30 14:49:25.052 o.a.s.d.w.Worker main [INFO] Worker has topology config {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, topology.submitter.principal=, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, topology.name=forecast-topology, storm.exhibitor.port=30529, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, storm.oci.cgroup.root=/sys/fs/cgroup, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, storm.id=forecast-topology-15-1711831758, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, supervisor.localizer.update.blob.interval.secs=30, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, storm.oci.nscd.dir=/var/run/nscd, java.home=/usr/lib/jvm/java-1.8.0-openjdk/jre, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupCpuStat=org.apache.storm.metrics2.cgroup.CGroupCpuStat, CGroupMemoryLimit=org.apache.storm.metrics2.cgroup.CGroupMemoryLimit, CGroupCpuGuaranteeByCfsQuota=org.apache.storm.metrics2.cgroup.CGroupCpuGuaranteeByCfsQuota, CGroupMemory=org.apache.storm.metrics2.cgroup.CGroupMemoryUsage, CGroupCpu=org.apache.storm.metrics2.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metrics2.cgroup.CGroupCpuGuarantee}, logviewer.port=30531, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], worker.max.timeout.secs=600, blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, topology.ras.acker.executors.per.worker=1, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[cheyenne.cs.colostate.edu], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, blacklist.scheduler.assume.supervisor.bad.based.on.bad.slot=true, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[30522, 30523, 30524, 30525], topology.stats.sample.rate=0.05, storm.local.dir=/tmp/storm_dilochan, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, storm.oci.cgroup.parent=/storm, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/lib/jvm/java-1.8.0-openjdk, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, topology.kryo.register={}, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.kryo.decorators=[], topology.worker.shared.thread.pool.size=4, topology.submitter.user=dilochan, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=30521, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=30530, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[salem.cs.colostate.edu], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=30526, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, topology.ras.one.executor.per.worker=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=30528, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=4, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=false, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.users=[null], topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/tmp/storm_dilochan, topology.spout.recvq.skips=3, storm.zookeeper.superACL=null, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, topology.ras.one.component.per.worker=false, ui.host=0.0.0.0, supervisor.thrift.port=30527, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2024-03-30 14:49:25.052 o.a.s.d.w.Worker main [INFO] Worker a32b0a39-4f58-4903-9594-dd1c583e1e4a for storm forecast-topology-15-1711831758 on 63f379b8-73fd-44b3-907c-bdbdcf40d974-129.82.44.141:30522  has finished loading
+2024-03-30 14:49:25.580 o.a.s.d.w.WorkerState refresh-active-timer [INFO] All connections are ready for worker 63f379b8-73fd-44b3-907c-bdbdcf40d974-129.82.44.141:30522 with id a32b0a39-4f58-4903-9594-dd1c583e1e4a
+2024-03-30 14:49:25.581 o.a.s.e.b.BoltExecutor Thread-15-__system-executor[-1, -1] [INFO] Preparing bolt __system:[-1]
+2024-03-30 14:49:25.583 o.a.s.e.b.BoltExecutor Thread-16-__acker-executor[4, 4] [INFO] Preparing bolt __acker:[4]
+2024-03-30 14:49:25.584 o.a.s.e.b.BoltExecutor Thread-16-__acker-executor[4, 4] [INFO] Prepared bolt __acker:[4]
+2024-03-30 14:49:25.587 o.a.s.e.b.BoltExecutor Thread-17-forecast-report-bolt-executor[11, 12] [INFO] Preparing bolt forecast-report-bolt:[11, 12]
+2024-03-30 14:49:25.664 o.a.s.e.b.BoltExecutor Thread-17-forecast-report-bolt-executor[11, 12] [INFO] Prepared bolt forecast-report-bolt:[11, 12]
+2024-03-30 14:49:25.673 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.674 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuStat is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 14:49:25.676 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.676 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupMemoryLimit is ENABLED and directory /sys/fs/cgroup/memory exists...
+2024-03-30 14:49:25.678 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.678 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuGuaranteeByCfsQuota is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 14:49:25.679 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.679 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupMemoryUsage is ENABLED and directory /sys/fs/cgroup/memory exists...
+2024-03-30 14:49:25.680 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.680 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpu is ENABLED and directory /sys/fs/cgroup/cpuacct exists...
+2024-03-30 14:49:25.681 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] storm.cgroup.hierarchy.dir is not set or does not exist. checking storm.oci.cgroup.root
+2024-03-30 14:49:25.681 o.a.s.m.c.CGroupMetricsBase Thread-15-__system-executor[-1, -1] [INFO] Metric CGroupCpuGuarantee is ENABLED and directory /sys/fs/cgroup/cpu exists...
+2024-03-30 14:49:25.682 o.a.s.e.b.BoltExecutor Thread-15-__system-executor[-1, -1] [INFO] Prepared bolt __system:[-1]
+2024-03-30 14:49:40.686 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:49:40.668Z 3 Texas 19 Alabama 12 District of Columbia 10 
+
+2024-03-30 14:49:40.687 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:49:40.686Z 4 Missouri 17 Pennsylvania 13 Tennessee 8 
+
+2024-03-30 14:49:55.666 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:49:55.666Z 3 New York 31 Louisiana 23 
+
+2024-03-30 14:49:55.666 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:49:55.666Z 4 Colorado 27 Minnesota 19 
+
+2024-03-30 14:50:10.667 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:10.667Z 3 Texas 48 Missouri 36 
+
+2024-03-30 14:50:10.667 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:10.667Z 4 Pennsylvania 47 Wisconsin 31 
+
+2024-03-30 14:50:25.670 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:25.670Z 3 Vermont 61 New York 53 
+
+2024-03-30 14:50:25.670 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:25.670Z 4 Minnesota 55 Pennsylvania 49 
+
+2024-03-30 14:50:40.670 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:40.669Z 3 Texas 76 
+
+2024-03-30 14:50:40.670 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:40.670Z 4 Indiana 65 Missouri 61 Minnesota 56 
+
+2024-03-30 14:50:55.676 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:55.675Z 3 Alabama 83 Vermont 81 
+
+2024-03-30 14:50:55.676 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:50:55.676Z 4 Montana 81 Indiana 76 Illinois 72 
+
+2024-03-30 14:51:10.669 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:10.668Z 3 Vermont 96 New York 93 Texas 87 
+
+2024-03-30 14:51:10.669 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:10.669Z 4 Ohio 90 Indiana 88 Nebraska 84 
+
+2024-03-30 14:51:25.671 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:25.671Z 3 Mississippi 109 Virginia 105 
+
+2024-03-30 14:51:25.671 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:25.671Z 4 Illinois 105 New York 98 Wisconsin 93 
+
+2024-03-30 14:51:40.673 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:40.673Z 3 Texas 124 
+
+2024-03-30 14:51:40.673 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:40.673Z 4 Illinois 117 Colorado 115 
+
+2024-03-30 14:51:55.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:55.680Z 3 Texas 143 Massachusetts 135 Pennsylvania 131 
+
+2024-03-30 14:51:55.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:51:55.681Z 4 Pennsylvania 133 
+
+2024-03-30 14:52:10.673 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:10.673Z 3 Texas 155 Mississippi 145 
+
+2024-03-30 14:52:10.673 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:10.673Z 4 Texas 144 
+
+2024-03-30 14:52:25.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:25.680Z 3 Texas 178 Louisiana 166 Montana 158 
+
+2024-03-30 14:52:25.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:25.681Z 4 Oklahoma 153 New York 145 
+
+2024-03-30 14:52:40.680 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:40.680Z 3 North Dakota 191 Texas 186 
+
+2024-03-30 14:52:40.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:40.681Z 4 Texas 165 Michigan 163 
+
+2024-03-30 14:52:55.682 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:55.681Z 3 New Jersey 201 Maryland 195 Louisiana 192 
+
+2024-03-30 14:52:55.682 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:52:55.682Z 4 Oklahoma 179 Missouri 174 Tennessee 170 
+
+2024-03-30 14:53:10.688 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:10.688Z 3 Connecticut 213 Texas 212 California 205 
+
+2024-03-30 14:53:10.688 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:10.688Z 4 Illinois 189 Pennsylvania 184 
+
+2024-03-30 14:53:25.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:25.681Z 3 Mississippi 230 Texas 214 
+
+2024-03-30 14:53:25.681 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:25.681Z 4 Michigan 200 Illinois 191 
+
+2024-03-30 14:53:40.684 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:40.684Z 3 Pennsylvania 240 Michigan 238 Mississippi 234 
+
+2024-03-30 14:53:40.684 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:40.684Z 4 California 212 Wisconsin 209 Texas 201 
+
+2024-03-30 14:53:55.684 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:55.684Z 3 Iowa 251 Massachusetts 251 Texas 249 
+
+2024-03-30 14:53:55.685 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:53:55.685Z 4 Utah 225 Virginia 221 New York 215 
+
+2024-03-30 14:54:10.687 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:10.687Z 3 Oregon 261 District of Columbia 259 Maine 255 
+
+2024-03-30 14:54:10.687 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:10.687Z 4 Texas 237 Tennessee 232 Kansas 231 
+
+2024-03-30 14:54:25.689 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:25.689Z 3 Kentucky 276 Missouri 271 
+
+2024-03-30 14:54:25.690 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:25.689Z 4 California 247 Illinois 243 West Virginia 239 
+
+2024-03-30 14:54:40.688 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:40.688Z 3 Virginia 291 Louisiana 289 Mississippi 281 
+
+2024-03-30 14:54:40.688 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:40.688Z 4 Mississippi 260 Kansas 255 Texas 253 
+
+2024-03-30 14:54:55.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:55.694Z 3 Texas 309 Louisiana 305 
+
+2024-03-30 14:54:55.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:54:55.694Z 4 Oklahoma 269 Missouri 268 Illinois 261 
+
+2024-03-30 14:55:10.691 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:10.691Z 3 Texas 321 
+
+2024-03-30 14:55:10.691 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:10.691Z 4 Texas 280 Utah 277 Minnesota 274 
+
+2024-03-30 14:55:25.696 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:25.695Z 3 Texas 333 Vermont 330 Georgia 323 
+
+2024-03-30 14:55:25.696 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:25.696Z 4 Arizona 291 Texas 288 Oklahoma 284 
+
+2024-03-30 14:55:40.691 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:40.690Z 3 Alabama 343 Texas 337 
+
+2024-03-30 14:55:40.691 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:40.691Z 4 Pennsylvania 302 Illinois 299 
+
+2024-03-30 14:55:55.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:55.692Z 3 Wyoming 358 Texas 351 Missouri 347 
+
+2024-03-30 14:55:55.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:55:55.692Z 4 Missouri 319 Illinois 306 Pennsylvania 304 
+
+2024-03-30 14:56:10.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:10.695Z 3 Vermont 375 Massachusetts 371 California 366 
+
+2024-03-30 14:56:10.696 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:10.695Z 4 Illinois 327 Texas 321 Missouri 321 
+
+2024-03-30 14:56:25.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:25.692Z 3 Alabama 389 New York 383 Maine 376 
+
+2024-03-30 14:56:25.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:25.692Z 4 Minnesota 336 Mississippi 333 Georgia 331 
+
+2024-03-30 14:56:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:40.693Z 3 Louisiana 413 Massachusetts 394 
+
+2024-03-30 14:56:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:40.693Z 4 California 347 Michigan 346 New Jersey 340 
+
+2024-03-30 14:56:55.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:55.693Z 3 Vermont 416 Louisiana 413 
+
+2024-03-30 14:56:55.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:56:55.694Z 4 New York 359 California 357 
+
+2024-03-30 14:57:10.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:10.692Z 3 Vermont 429 New York 423 Kentucky 421 
+
+2024-03-30 14:57:10.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:10.693Z 4 Kansas 374 New York 366 
+
+2024-03-30 14:57:25.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:25.693Z 3 Pennsylvania 443 Mississippi 441 California 436 
+
+2024-03-30 14:57:25.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:25.693Z 4 Texas 388 Minnesota 381 Kansas 376 
+
+2024-03-30 14:57:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:40.693Z 3 Louisiana 460 Texas 454 
+
+2024-03-30 14:57:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:40.693Z 4 New York 395 Texas 390 
+
+2024-03-30 14:57:55.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:55.693Z 3 New York 466 Louisiana 464 Texas 461 
+
+2024-03-30 14:57:55.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:57:55.693Z 4 Michigan 408 Oklahoma 403 Virginia 400 
+
+2024-03-30 14:58:10.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:10.693Z 3 Texas 479 New Jersey 476 
+
+2024-03-30 14:58:10.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:10.693Z 4 Ohio 422 Virginia 420 New York 416 
+
+2024-03-30 14:58:25.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:25.693Z 3 Louisiana 495 Oregon 485 New York 483 
+
+2024-03-30 14:58:25.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:25.693Z 4 New York 436 Missouri 435 Oklahoma 428 
+
+2024-03-30 14:58:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:40.693Z 3 New York 503 Texas 502 Missouri 497 
+
+2024-03-30 14:58:40.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:40.693Z 4 Arizona 450 Texas 446 Illinois 441 
+
+2024-03-30 14:58:55.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:55.692Z 3 New York 518 California 513 West Virginia 508 
+
+2024-03-30 14:58:55.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:58:55.692Z 4 Pennsylvania 460 Oklahoma 455 
+
+2024-03-30 14:59:10.692 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:10.692Z 3 Louisiana 534 Texas 524 
+
+2024-03-30 14:59:10.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:10.692Z 4 Pennsylvania 471 Missouri 465 
+
+2024-03-30 14:59:25.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:25.693Z 3 Texas 549 North Dakota 541 New Hampshire 540 
+
+2024-03-30 14:59:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:25.693Z 4 Texas 485 Michigan 481 Montana 475 
+
+2024-03-30 14:59:40.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:40.693Z 3 Texas 561 
+
+2024-03-30 14:59:40.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:40.694Z 4 West Virginia 497 New York 494 Idaho 490 
+
+2024-03-30 14:59:55.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:55.693Z 3 Texas 574 Vermont 564 
+
+2024-03-30 14:59:55.693 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T20:59:55.693Z 4 Wisconsin 512 Missouri 502 
+
+2024-03-30 15:00:10.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:10.693Z 3 Texas 578 
+
+2024-03-30 15:00:10.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:10.694Z 4 Pennsylvania 525 
+
+2024-03-30 15:00:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:25.694Z 3 Kentucky 581 Alabama 579 Texas 578 
+
+2024-03-30 15:00:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:25.694Z 4 Pennsylvania 525 
+
+2024-03-30 15:00:40.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:40.694Z 3 Alabama 589 New York 585 Massachusetts 581 
+
+2024-03-30 15:00:40.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:40.694Z 4 Minnesota 528 Pennsylvania 527 
+
+2024-03-30 15:00:55.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:55.693Z 3 Massachusetts 600 Virginia 596 Louisiana 592 
+
+2024-03-30 15:00:55.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:00:55.694Z 4 Missouri 534 Utah 533 Montana 530 
+
+2024-03-30 15:01:10.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:10.695Z 3 Kansas 610 California 605 New York 601 
+
+2024-03-30 15:01:10.696 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:10.695Z 4 New York 540 Texas 537 
+
+2024-03-30 15:01:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:25.694Z 3 New York 619 Texas 615 Vermont 613 
+
+2024-03-30 15:01:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:25.694Z 4 Oklahoma 548 Kentucky 548 Montana 544 
+
+2024-03-30 15:01:40.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:40.694Z 3 Louisiana 628 California 626 Oregon 619 
+
+2024-03-30 15:01:40.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:40.694Z 4 Montana 562 Arkansas 557 Iowa 552 
+
+2024-03-30 15:01:55.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:55.694Z 3 Vermont 638 North Dakota 636 Tennessee 632 
+
+2024-03-30 15:01:55.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:01:55.695Z 4 California 569 Texas 566 
+
+2024-03-30 15:02:10.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:10.695Z 3 Louisiana 647 Texas 644 Virginia 641 
+
+2024-03-30 15:02:10.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:10.695Z 4 California 583 
+
+2024-03-30 15:02:25.694 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:25.694Z 3 Kentucky 658 Pennsylvania 655 New York 651 
+
+2024-03-30 15:02:25.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:25.695Z 4 Guam 587 Pennsylvania 585 California 583 
+
+2024-03-30 15:02:40.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:40.695Z 3 Virginia 668 Oklahoma 663 
+
+2024-03-30 15:02:40.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:40.695Z 4 Indiana 595 Minnesota 592 Oklahoma 589 
+
+2024-03-30 15:02:55.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:55.695Z 3 Kentucky 680 West Virginia 669 
+
+2024-03-30 15:02:55.695 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:02:55.695Z 4 Texas 601 Minnesota 596 
+
+2024-03-30 15:03:10.697 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:10.696Z 3 Mississippi 694 New Jersey 691 Texas 689 
+
+2024-03-30 15:03:10.697 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:10.697Z 4 West Virginia 610 Illinois 609 Michigan 607 
+
+2024-03-30 15:03:25.697 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:25.697Z 3 Alabama 705 West Virginia 699 New York 698 
+
+2024-03-30 15:03:25.697 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:25.697Z 4 Guam 620 Arizona 617 California 615 
+
+2024-03-30 15:03:40.698 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:40.698Z 3 Alabama 717 Texas 712 New York 707 
+
+2024-03-30 15:03:40.698 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:40.698Z 4 Texas 633 Virginia 628 Pennsylvania 622 
+
+2024-03-30 15:03:55.698 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:55.698Z 3 Massachusetts 727 New Jersey 725 Idaho 718 
+
+2024-03-30 15:03:55.698 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:03:55.698Z 4 Oklahoma 642 Minnesota 640 
+
+2024-03-30 15:04:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:10.702Z 3 New York 741 Kentucky 735 Montana 731 
+
+2024-03-30 15:04:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:10.702Z 4 New York 654 Alaska 648 
+
+2024-03-30 15:04:25.699 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:25.699Z 3 Texas 764 Louisiana 752 Iowa 745 
+
+2024-03-30 15:04:25.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:25.699Z 4 Texas 663 California 661 
+
+2024-03-30 15:04:40.699 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:40.699Z 3 Texas 778 
+
+2024-03-30 15:04:40.699 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:40.699Z 4 Arizona 672 Texas 669 
+
+2024-03-30 15:04:55.699 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:55.699Z 3 New Hampshire 782 Texas 778 
+
+2024-03-30 15:04:55.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:04:55.700Z 4 New York 684 Iowa 680 Illinois 674 
+
+2024-03-30 15:05:10.699 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:10.699Z 3 Texas 794 Alabama 785 
+
+2024-03-30 15:05:10.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:10.699Z 4 Alaska 698 Utah 695 Iowa 689 
+
+2024-03-30 15:05:25.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:25.700Z 3 Texas 805 New Jersey 800 
+
+2024-03-30 15:05:25.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:25.700Z 4 Michigan 710 Utah 708 New York 704 
+
+2024-03-30 15:05:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:40.701Z 3 Texas 818 
+
+2024-03-30 15:05:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:40.701Z 4 California 724 Kentucky 718 
+
+2024-03-30 15:05:55.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:55.700Z 3 Missouri 829 Texas 824 New Jersey 821 
+
+2024-03-30 15:05:55.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:05:55.701Z 4 Pennsylvania 735 California 732 New York 727 
+
+2024-03-30 15:06:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:10.701Z 3 New York 844 Mississippi 835 
+
+2024-03-30 15:06:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:10.702Z 4 California 748 Montana 744 Oklahoma 741 
+
+2024-03-30 15:06:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:25.701Z 3 Illinois 852 Texas 849 New York 844 
+
+2024-03-30 15:06:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:25.702Z 4 Colorado 759 California 757 Illinois 751 
+
+2024-03-30 15:06:40.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:40.700Z 3 California 869 Texas 866 West Virginia 862 
+
+2024-03-30 15:06:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:40.701Z 4 Missouri 773 Tennessee 769 Vermont 764 
+
+2024-03-30 15:06:55.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:55.700Z 3 Pennsylvania 880 Massachusetts 874 Maryland 873 
+
+2024-03-30 15:06:55.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:06:55.701Z 4 Pennsylvania 783 Wyoming 780 Ohio 776 
+
+2024-03-30 15:07:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:10.701Z 3 Texas 890 New York 885 Massachusetts 882 
+
+2024-03-30 15:07:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:10.701Z 4 Texas 796 Illinois 792 Pennsylvania 787 
+
+2024-03-30 15:07:25.700 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:25.700Z 3 Alabama 908 Texas 902 New York 895 
+
+2024-03-30 15:07:25.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:25.700Z 4 Michigan 809 Ohio 804 Indiana 801 
+
+2024-03-30 15:07:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:40.701Z 3 New Hampshire 927 Louisiana 918 Mississippi 913 
+
+2024-03-30 15:07:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:40.701Z 4 Arizona 818 Michigan 815 
+
+2024-03-30 15:07:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:55.702Z 3 California 939 Iowa 933 New Hampshire 927 
+
+2024-03-30 15:07:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:07:55.702Z 4 Michigan 829 New York 826 Utah 824 
+
+2024-03-30 15:08:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:10.702Z 3 Pennsylvania 950 New York 946 New Jersey 945 
+
+2024-03-30 15:08:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:10.702Z 4 New York 836 Pennsylvania 834 Michigan 833 
+
+2024-03-30 15:08:25.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:25.701Z 3 California 967 Louisiana 961 New York 954 
+
+2024-03-30 15:08:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:25.702Z 4 Pennsylvania 853 Colorado 850 Oklahoma 842 
+
+2024-03-30 15:08:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:40.702Z 3 Kansas 978 Virginia 972 New York 969 
+
+2024-03-30 15:08:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:40.703Z 4 West Virginia 866 Indiana 861 Virginia 857 
+
+2024-03-30 15:08:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:55.701Z 3 Virginia 991 North Dakota 989 New York 983 
+
+2024-03-30 15:08:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:08:55.702Z 4 Texas 877 
+
+2024-03-30 15:09:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:10.701Z 3 Colorado 1007 Texas 1000 Rhode Island 998 
+
+2024-03-30 15:09:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:10.702Z 4 Minnesota 888 Texas 884 
+
+2024-03-30 15:09:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:25.702Z 3 New York 1019 Texas 1017 
+
+2024-03-30 15:09:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:25.702Z 4 Montana 902 Texas 895 New York 892 
+
+2024-03-30 15:09:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:40.702Z 3 Texas 1038 New York 1031 Vermont 1029 
+
+2024-03-30 15:09:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:40.702Z 4 New York 912 Texas 910 Indiana 904 
+
+2024-03-30 15:09:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:55.702Z 3 Maine 1051 Kentucky 1047 Oklahoma 1043 
+
+2024-03-30 15:09:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:09:55.702Z 4 California 936 Utah 919 
+
+2024-03-30 15:10:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:10.701Z 3 Texas 1065 New York 1060 California 1054 
+
+2024-03-30 15:10:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:10.702Z 4 California 940 
+
+2024-03-30 15:10:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:25.702Z 3 Iowa 1079 New Jersey 1076 Alabama 1071 
+
+2024-03-30 15:10:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:25.702Z 4 Colorado 949 Kentucky 944 West Virginia 942 
+
+2024-03-30 15:10:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:40.702Z 3 New Hampshire 1093 Rhode Island 1086 Massachusetts 1083 
+
+2024-03-30 15:10:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:40.702Z 4 Pennsylvania 963 Missouri 955 
+
+2024-03-30 15:10:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:55.702Z 3 New York 1107 Florida 1101 Massachusetts 1100 
+
+2024-03-30 15:10:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:10:55.702Z 4 New York 970 Indiana 966 Pennsylvania 963 
+
+2024-03-30 15:11:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:10.701Z 3 Texas 1123 
+
+2024-03-30 15:11:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:10.701Z 4 Texas 978 West Virginia 974 New York 971 
+
+2024-03-30 15:11:25.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:25.701Z 3 Louisiana 1129 Texas 1127 
+
+2024-03-30 15:11:25.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:25.701Z 4 Montana 991 Indiana 990 
+
+2024-03-30 15:11:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:40.701Z 3 Tennessee 1144 Massachusetts 1141 Texas 1137 
+
+2024-03-30 15:11:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:40.701Z 4 Colorado 1003 Kansas 996 Tennessee 993 
+
+2024-03-30 15:11:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:55.702Z 3 Florida 1156 Texas 1151 
+
+2024-03-30 15:11:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:11:55.703Z 4 New York 1015 Colorado 1010 Indiana 1006 
+
+2024-03-30 15:12:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:10.701Z 3 Louisiana 1174 Texas 1167 New Hampshire 1161 
+
+2024-03-30 15:12:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:10.701Z 4 Colorado 1028 Missouri 1025 Virginia 1020 
+
+2024-03-30 15:12:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:25.702Z 3 Texas 1189 Louisiana 1184 
+
+2024-03-30 15:12:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:25.702Z 4 Texas 1045 Ohio 1040 Oklahoma 1034 
+
+2024-03-30 15:12:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:40.702Z 3 Texas 1200 Kentucky 1195 New Jersey 1193 
+
+2024-03-30 15:12:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:40.702Z 4 New York 1055 West Virginia 1048 
+
+2024-03-30 15:12:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:55.702Z 3 Montana 1212 Kentucky 1210 Tennessee 1205 
+
+2024-03-30 15:12:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:12:55.702Z 4 Minnesota 1069 Tennessee 1060 
+
+2024-03-30 15:13:10.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:10.701Z 3 New York 1222 Mississippi 1219 Pennsylvania 1217 
+
+2024-03-30 15:13:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:10.702Z 4 Arkansas 1082 Ohio 1077 
+
+2024-03-30 15:13:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:25.702Z 3 Texas 1242 New Mexico 1233 Virginia 1231 
+
+2024-03-30 15:13:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:25.702Z 4 Texas 1102 Ohio 1091 Virginia 1088 
+
+2024-03-30 15:13:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:40.701Z 3 Colorado 1253 Texas 1252 
+
+2024-03-30 15:13:40.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:40.702Z 4 Tennessee 1109 Texas 1106 
+
+2024-03-30 15:13:55.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:55.701Z 3 Massachusetts 1265 North Carolina 1259 Missouri 1254 
+
+2024-03-30 15:13:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:13:55.701Z 4 West Virginia 1122 Pennsylvania 1117 
+
+2024-03-30 15:14:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:10.702Z 3 Kentucky 1281 Virginia 1277 Texas 1269 
+
+2024-03-30 15:14:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:10.702Z 4 New York 1136 Ohio 1133 Pennsylvania 1129 
+
+2024-03-30 15:14:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:25.702Z 3 Virginia 1298 Alabama 1289 New York 1284 
+
+2024-03-30 15:14:25.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:25.702Z 4 Texas 1153 Pennsylvania 1147 California 1141 
+
+2024-03-30 15:14:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:40.701Z 3 New York 1315 Texas 1305 
+
+2024-03-30 15:14:40.701 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:40.701Z 4 New York 1164 Texas 1155 
+
+2024-03-30 15:14:55.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:55.702Z 3 Mississippi 1329 Texas 1325 New York 1317 
+
+2024-03-30 15:14:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:14:55.703Z 4 Colorado 1170 New York 1166 Oklahoma 1165 
+
+2024-03-30 15:15:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:10.702Z 3 Texas 1345 New York 1337 Louisiana 1334 
+
+2024-03-30 15:15:10.702 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:10.702Z 4 Missouri 1182 Minnesota 1177 
+
+2024-03-30 15:15:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:25.703Z 3 New Jersey 1357 Texas 1355 Virginia 1349 
+
+2024-03-30 15:15:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:25.703Z 4 Texas 1189 Missouri 1182 
+
+2024-03-30 15:15:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:40.702Z 3 New York 1368 Texas 1363 
+
+2024-03-30 15:15:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:40.703Z 4 Utah 1198 Texas 1196 
+
+2024-03-30 15:15:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:55.703Z 3 Texas 1385 
+
+2024-03-30 15:15:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:15:55.703Z 4 Illinois 1212 Texas 1203 
+
+2024-03-30 15:16:10.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:10.703Z 3 District of Columbia 1393 New York 1392 Texas 1389 
+
+2024-03-30 15:16:10.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:10.703Z 4 Ohio 1225 Indiana 1216 
+
+2024-03-30 15:16:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:25.703Z 3 Texas 1412 North Dakota 1404 Vermont 1400 
+
+2024-03-30 15:16:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:25.703Z 4 Texas 1236 Nevada 1231 
+
+2024-03-30 15:16:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:40.703Z 3 West Virginia 1422 Mississippi 1420 Maryland 1417 
+
+2024-03-30 15:16:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:40.703Z 4 California 1249 Montana 1245 Missouri 1243 
+
+2024-03-30 15:16:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:55.702Z 3 New Jersey 1435 Texas 1432 
+
+2024-03-30 15:16:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:16:55.703Z 4 Iowa 1258 Missouri 1251 California 1251 
+
+2024-03-30 15:17:10.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:10.703Z 3 Alabama 1449 Maryland 1440 New York 1436 
+
+2024-03-30 15:17:10.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:10.703Z 4 New York 1273 
+
+2024-03-30 15:17:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:25.702Z 3 Texas 1467 Montana 1458 Massachusetts 1452 
+
+2024-03-30 15:17:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:25.703Z 4 Texas 1290 Iowa 1282 Virginia 1279 
+
+2024-03-30 15:17:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:40.703Z 3 Texas 1481 
+
+2024-03-30 15:17:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:40.703Z 4 Virginia 1297 California 1294 Texas 1290 
+
+2024-03-30 15:17:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:55.703Z 3 Iowa 1489 California 1487 Texas 1481 
+
+2024-03-30 15:17:55.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:17:55.703Z 4 Indiana 1309 New York 1308 
+
+2024-03-30 15:18:10.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:10.703Z 3 Texas 1508 North Dakota 1500 New York 1492 
+
+2024-03-30 15:18:10.704 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:10.703Z 4 California 1322 New York 1318 Michigan 1313 
+
+2024-03-30 15:18:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:25.703Z 3 New York 1523 Texas 1514 
+
+2024-03-30 15:18:25.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:25.703Z 4 Wyoming 1332 Maryland 1329 Ohio 1326 
+
+2024-03-30 15:18:40.703 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:40.703Z 3 Missouri 1535 Virginia 1531 New York 1525 
+
+2024-03-30 15:18:40.704 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:40.704Z 4 New York 1347 
+
+2024-03-30 15:18:55.704 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:55.704Z 3 South Dakota 1550 Texas 1549 
+
+2024-03-30 15:18:55.704 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:18:55.704Z 4 New York 1357 
+
+2024-03-30 15:19:10.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:10.705Z 3 Mississippi 1565 Massachusetts 1562 Maryland 1555 
+
+2024-03-30 15:19:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:10.706Z 4 Illinois 1369 California 1367 Texas 1363 
+
+2024-03-30 15:19:25.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:25.705Z 3 Mississippi 1578 New Hampshire 1572 Louisiana 1568 
+
+2024-03-30 15:19:25.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:25.705Z 4 Missouri 1388 
+
+2024-03-30 15:19:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:40.706Z 3 New Mexico 1592 Texas 1590 Michigan 1585 
+
+2024-03-30 15:19:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:40.706Z 4 Iowa 1393 Texas 1391 Missouri 1388 
+
+2024-03-30 15:19:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:55.706Z 3 New York 1611 
+
+2024-03-30 15:19:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:19:55.706Z 4 Alaska 1404 West Virginia 1402 Oregon 1396 
+
+2024-03-30 15:20:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:10.706Z 3 Texas 1626 New York 1621 
+
+2024-03-30 15:20:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:10.706Z 4 Kansas 1414 Hawaii 1411 Utah 1408 
+
+2024-03-30 15:20:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:25.705Z 3 Texas 1638 
+
+2024-03-30 15:20:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:25.706Z 4 Pennsylvania 1428 Ohio 1422 Puerto Rico 1415 
+
+2024-03-30 15:20:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:40.706Z 3 Puerto Rico 1649 Texas 1646 Alabama 1640 
+
+2024-03-30 15:20:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:40.706Z 4 Puerto Rico 1438 Illinois 1437 
+
+2024-03-30 15:20:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:55.706Z 3 Vermont 1664 Missouri 1659 Texas 1654 
+
+2024-03-30 15:20:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:20:55.706Z 4 Kentucky 1453 Missouri 1450 Indiana 1445 
+
+2024-03-30 15:21:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:10.706Z 3 Georgia 1672 Kentucky 1671 Maine 1667 
+
+2024-03-30 15:21:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:10.706Z 4 Michigan 1466 Colorado 1463 
+
+2024-03-30 15:21:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:25.706Z 3 Arizona 1686 New York 1681 Virginia 1676 
+
+2024-03-30 15:21:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:25.706Z 4 California 1482 Hawaii 1476 
+
+2024-03-30 15:21:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:40.705Z 3 Massachusetts 1706 Texas 1697 Montana 1691 
+
+2024-03-30 15:21:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:40.706Z 4 Pennsylvania 1496 Alaska 1490 Texas 1487 
+
+2024-03-30 15:21:55.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:55.705Z 3 Louisiana 1713 Missouri 1710 Massachusetts 1706 
+
+2024-03-30 15:21:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:21:55.706Z 4 Missouri 1516 Pennsylvania 1506 Ohio 1500 
+
+2024-03-30 15:22:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:10.706Z 3 Texas 1729 Colorado 1721 
+
+2024-03-30 15:22:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:10.706Z 4 Virginia 1528 Wisconsin 1526 Missouri 1522 
+
+2024-03-30 15:22:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:25.706Z 3 Kentucky 1739 New York 1735 West Virginia 1731 
+
+2024-03-30 15:22:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:25.706Z 4 Pennsylvania 1539 California 1533 
+
+2024-03-30 15:22:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:40.705Z 3 West Virginia 1755 Mississippi 1751 Louisiana 1745 
+
+2024-03-30 15:22:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:40.706Z 4 California 1553 Texas 1546 Kentucky 1542 
+
+2024-03-30 15:22:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:55.706Z 3 Louisiana 1770 
+
+2024-03-30 15:22:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:22:55.706Z 4 Texas 1566 New York 1560 Alaska 1557 
+
+2024-03-30 15:23:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:10.706Z 3 Texas 1786 New York 1780 
+
+2024-03-30 15:23:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:10.706Z 4 Montana 1581 Minnesota 1579 Iowa 1570 
+
+2024-03-30 15:23:25.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:25.705Z 3 Texas 1798 
+
+2024-03-30 15:23:25.705 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:25.705Z 4 Colorado 1594 Texas 1589 Iowa 1583 
+
+2024-03-30 15:23:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:40.706Z 3 Mississippi 1807 Pennsylvania 1802 New York 1800 
+
+2024-03-30 15:23:40.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:40.706Z 4 West Virginia 1608 Pennsylvania 1605 Colorado 1594 
+
+2024-03-30 15:23:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:55.706Z 3 Louisiana 1820 Kentucky 1816 Texas 1814 
+
+2024-03-30 15:23:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:23:55.706Z 4 Michigan 1618 Kentucky 1614 Missouri 1611 
+
+2024-03-30 15:24:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:10.706Z 3 Alabama 1833 Mississippi 1830 West Virginia 1827 
+
+2024-03-30 15:24:10.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:10.706Z 4 Pennsylvania 1628 Texas 1626 Kentucky 1618 
+
+2024-03-30 15:24:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:25.705Z 3 Kentucky 1848 Maryland 1844 Texas 1840 
+
+2024-03-30 15:24:25.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:25.706Z 4 Missouri 1644 California 1638 Texas 1634 
+
+2024-03-30 15:24:40.707 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:40.706Z 3 Virginia 1862 Louisiana 1856 Vermont 1851 
+
+2024-03-30 15:24:40.707 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:40.707Z 4 New York 1661 Pennsylvania 1656 
+
+2024-03-30 15:24:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:55.706Z 3 Vermont 1872 Oklahoma 1866 Mississippi 1864 
+
+2024-03-30 15:24:55.706 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:24:55.706Z 4 Texas 1674 Oklahoma 1670 Indiana 1665 
+
+2024-03-30 15:25:10.707 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:10.707Z 3 Texas 1888 
+
+2024-03-30 15:25:10.707 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:10.707Z 4 Utah 1693 Texas 1688 Missouri 1682 
+
+2024-03-30 15:25:25.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:25.707Z 3 Texas 1898 
+
+2024-03-30 15:25:25.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:25.708Z 4 Indiana 1702 Illinois 1698 South Dakota 1693 
+
+2024-03-30 15:25:40.707 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:40.707Z 3 New York 1907 Texas 1904 West Virginia 1898 
+
+2024-03-30 15:25:40.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:40.708Z 4 Texas 1711 Pennsylvania 1708 New York 1704 
+
+2024-03-30 15:25:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:55.707Z 3 Texas 1929 Florida 1913 
+
+2024-03-30 15:25:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:25:55.708Z 4 Texas 1728 Colorado 1716 
+
+2024-03-30 15:26:10.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:10.708Z 3 Louisiana 1936 Texas 1935 
+
+2024-03-30 15:26:10.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:10.709Z 4 Minnesota 1736 Texas 1734 
+
+2024-03-30 15:26:25.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:25.708Z 3 Massachusetts 1949 Alabama 1945 North Carolina 1938 
+
+2024-03-30 15:26:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:25.708Z 4 Kentucky 1750 Wisconsin 1748 Colorado 1742 
+
+2024-03-30 15:26:40.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:40.708Z 3 Texas 1968 New Jersey 1957 
+
+2024-03-30 15:26:40.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:40.709Z 4 Texas 1768 Missouri 1764 Michigan 1755 
+
+2024-03-30 15:26:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:55.708Z 3 Rhode Island 1983 Texas 1977 
+
+2024-03-30 15:26:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:26:55.708Z 4 Ohio 1781 Oklahoma 1775 
+
+2024-03-30 15:27:10.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:10.708Z 3 Pennsylvania 2000 Texas 1997 Louisiana 1986 
+
+2024-03-30 15:27:10.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:10.708Z 4 Pennsylvania 1797 California 1791 Oklahoma 1786 
+
+2024-03-30 15:27:25.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:25.708Z 3 Texas 2016 Kentucky 2003 
+
+2024-03-30 15:27:25.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:25.708Z 4 Kansas 1802 Pennsylvania 1799 
+
+2024-03-30 15:27:40.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:40.709Z 3 Maine 2026 Texas 2024 
+
+2024-03-30 15:27:40.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:40.709Z 4 Kentucky 1818 West Virginia 1814 New York 1811 
+
+2024-03-30 15:27:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:55.708Z 3 New York 2041 Maryland 2039 
+
+2024-03-30 15:27:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:27:55.709Z 4 Ohio 1830 Illinois 1822 
+
+2024-03-30 15:28:10.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:10.708Z 3 Texas 2054 
+
+2024-03-30 15:28:10.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:10.709Z 4 Illinois 1842 Missouri 1839 Virginia 1834 
+
+2024-03-30 15:28:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:25.709Z 3 Tennessee 2067 Vermont 2060 Missouri 2057 
+
+2024-03-30 15:28:25.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:25.709Z 4 West Virginia 1853 California 1849 Arkansas 1848 
+
+2024-03-30 15:28:40.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:40.708Z 3 New Jersey 2082 Massachusetts 2074 Tennessee 2071 
+
+2024-03-30 15:28:40.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:40.708Z 4 Wyoming 1862 Missouri 1858 New York 1854 
+
+2024-03-30 15:28:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:55.708Z 3 Colorado 2095 West Virginia 2090 Massachusetts 2086 
+
+2024-03-30 15:28:55.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:28:55.708Z 4 California 1878 Tennessee 1864 
+
+2024-03-30 15:29:10.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:10.709Z 3 Texas 2110 
+
+2024-03-30 15:29:10.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:10.709Z 4 Tennessee 1887 California 1884 
+
+2024-03-30 15:29:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:25.709Z 3 New York 2120 Mississippi 2112 
+
+2024-03-30 15:29:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:25.709Z 4 Pennsylvania 1902 New York 1898 Illinois 1890 
+
+2024-03-30 15:29:40.708 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:40.708Z 3 Massachusetts 2134 Colorado 2131 Mississippi 2124 
+
+2024-03-30 15:29:40.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:40.708Z 4 Missouri 1919 Illinois 1911 Pennsylvania 1908 
+
+2024-03-30 15:29:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:55.708Z 3 West Virginia 2145 Minnesota 2139 Massachusetts 2134 
+
+2024-03-30 15:29:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:29:55.709Z 4 Kentucky 1932 Pennsylvania 1932 Michigan 1925 
+
+2024-03-30 15:30:10.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:10.709Z 3 Tennessee 2151 Virginia 2150 Louisiana 2148 
+
+2024-03-30 15:30:10.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:10.710Z 4 Pennsylvania 1944 
+
+2024-03-30 15:30:25.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:25.710Z 3 Texas 2164 Alabama 2158 Arkansas 2154 
+
+2024-03-30 15:30:25.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:25.710Z 4 Missouri 1954 Michigan 1953 Pennsylvania 1950 
+
+2024-03-30 15:30:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:40.709Z 3 Virginia 2175 Louisiana 2170 Texas 2166 
+
+2024-03-30 15:30:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:40.710Z 4 New York 1970 
+
+2024-03-30 15:30:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:55.709Z 3 Michigan 2189 Louisiana 2183 Maine 2180 
+
+2024-03-30 15:30:55.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:30:55.709Z 4 California 1984 West Virginia 1977 Minnesota 1976 
+
+2024-03-30 15:31:10.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:10.710Z 3 Texas 2208 Kentucky 2194 
+
+2024-03-30 15:31:10.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:10.710Z 4 Michigan 1999 Texas 1994 Iowa 1988 
+
+2024-03-30 15:31:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:25.709Z 3 Texas 2227 
+
+2024-03-30 15:31:25.709 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:25.709Z 4 Virginia 2010 California 2006 Texas 2003 
+
+2024-03-30 15:31:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:40.710Z 3 Texas 2237 
+
+2024-03-30 15:31:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:40.710Z 4 Maine 2023 Idaho 2021 New York 2017 
+
+2024-03-30 15:31:55.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:55.711Z 3 Texas 2241 
+
+2024-03-30 15:31:55.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:31:55.711Z 4 California 2038 
+
+2024-03-30 15:32:10.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:10.711Z 3 Louisiana 2249 Texas 2247 West Virginia 2241 
+
+2024-03-30 15:32:10.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:10.711Z 4 California 2051 Texas 2047 New York 2041 
+
+2024-03-30 15:32:25.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:25.711Z 3 New York 2262 Maryland 2257 Massachusetts 2254 
+
+2024-03-30 15:32:25.712 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:25.711Z 4 Michigan 2063 
+
+2024-03-30 15:32:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:40.710Z 3 Rhode Island 2274 Texas 2272 Louisiana 2265 
+
+2024-03-30 15:32:40.710 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:40.710Z 4 Ohio 2071 Texas 2070 Illinois 2064 
+
+2024-03-30 15:32:55.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:55.711Z 3 New Jersey 2288 Louisiana 2281 North Carolina 2278 
+
+2024-03-30 15:32:55.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:32:55.711Z 4 New York 2085 Pennsylvania 2084 Minnesota 2080 
+
+2024-03-30 15:33:10.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:10.711Z 3 Texas 2299 New York 2296 Alabama 2294 
+
+2024-03-30 15:33:10.711 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:10.711Z 4 Puerto Rico 2097 Missouri 2097 Tennessee 2088 
+
+2024-03-30 15:33:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:25.720Z 3 Texas 2316 Virginia 2305 
+
+2024-03-30 15:33:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:25.721Z 4 California 2110 West Virginia 2107 Wyoming 2102 
+
+2024-03-30 15:33:40.718 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:40.718Z 3 Louisiana 2333 Texas 2322 
+
+2024-03-30 15:33:40.718 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:40.718Z 4 Oklahoma 2126 Pennsylvania 2119 Texas 2114 
+
+2024-03-30 15:33:55.719 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:55.719Z 3 California 2343 Louisiana 2342 
+
+2024-03-30 15:33:55.720 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:33:55.720Z 4 Nevada 2144 New York 2140 Oklahoma 2130 
+
+2024-03-30 15:34:10.720 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:10.720Z 3 Maryland 2359 Texas 2358 
+
+2024-03-30 15:34:10.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:10.721Z 4 Pennsylvania 2158 Texas 2149 
+
+2024-03-30 15:34:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:25.720Z 3 Maryland 2371 South Dakota 2369 Michigan 2362 
+
+2024-03-30 15:34:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:25.721Z 4 Montana 2170 Colorado 2165 Michigan 2162 
+
+2024-03-30 15:34:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:40.720Z 3 Florida 2385 Texas 2381 
+
+2024-03-30 15:34:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:40.721Z 4 Pennsylvania 2189 Michigan 2182 
+
+2024-03-30 15:34:55.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:55.721Z 3 Texas 2399 Kentucky 2395 Louisiana 2393 
+
+2024-03-30 15:34:55.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:34:55.721Z 4 New York 2200 Minnesota 2194 
+
+2024-03-30 15:35:10.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:10.720Z 3 Texas 2419 
+
+2024-03-30 15:35:10.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:10.721Z 4 Tennessee 2213 Pennsylvania 2205 
+
+2024-03-30 15:35:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:25.720Z 3 Vermont 2431 Texas 2429 
+
+2024-03-30 15:35:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:25.721Z 4 Oklahoma 2226 Ohio 2220 Minnesota 2217 
+
+2024-03-30 15:35:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:40.721Z 3 Louisiana 2444 Mississippi 2432 
+
+2024-03-30 15:35:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:40.721Z 4 New York 2233 Oklahoma 2230 
+
+2024-03-30 15:35:55.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:55.721Z 3 Pennsylvania 2458 Kentucky 2449 
+
+2024-03-30 15:35:55.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:35:55.721Z 4 California 2242 Utah 2240 Texas 2236 
+
+2024-03-30 15:36:10.720 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:10.720Z 3 Pennsylvania 2471 New Jersey 2466 Tennessee 2462 
+
+2024-03-30 15:36:10.720 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:10.720Z 4 Indiana 2257 California 2250 
+
+2024-03-30 15:36:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:25.721Z 3 Texas 2486 Maine 2478 Vermont 2477 
+
+2024-03-30 15:36:25.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:25.721Z 4 Michigan 2267 Colorado 2265 New York 2262 
+
+2024-03-30 15:36:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:40.721Z 3 Texas 2501 Alabama 2495 
+
+2024-03-30 15:36:40.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:40.721Z 4 Arkansas 2280 New York 2276 California 2271 
+
+2024-03-30 15:36:55.720 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:55.720Z 3 Mississippi 2514 Texas 2507 
+
+2024-03-30 15:36:55.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:36:55.721Z 4 Texas 2288 Mississippi 2280 
+
+2024-03-30 15:37:10.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:10.721Z 3 Mississippi 2531 New York 2525 Texas 2519 
+
+2024-03-30 15:37:10.721 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:10.721Z 4 Pennsylvania 2303 Louisiana 2298 Wisconsin 2295 
+
+2024-03-30 15:37:25.722 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:25.722Z 3 New York 2545 Texas 2535 
+
+2024-03-30 15:37:25.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:25.723Z 4 Michigan 2316 Indiana 2313 Texas 2306 
+
+2024-03-30 15:37:40.722 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:40.722Z 3 Oklahoma 2550 Maryland 2546 New York 2545 
+
+2024-03-30 15:37:40.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:40.723Z 4 Montana 2327 Indiana 2324 
+
+2024-03-30 15:37:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:55.723Z 3 Texas 2579 
+
+2024-03-30 15:37:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:37:55.723Z 4 Minnesota 2346 Texas 2339 
+
+2024-03-30 15:38:10.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:10.723Z 3 Texas 2585 
+
+2024-03-30 15:38:10.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:10.723Z 4 Missouri 2360 Colorado 2354 Virginia 2350 
+
+2024-03-30 15:38:25.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:25.722Z 3 Maine 2590 Kentucky 2589 Texas 2585 
+
+2024-03-30 15:38:25.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:25.723Z 4 Oklahoma 2370 Indiana 2364 Kentucky 2363 
+
+2024-03-30 15:38:40.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:40.722Z 3 Alabama 2605 Texas 2600 California 2595 
+
+2024-03-30 15:38:40.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:40.723Z 4 Puerto Rico 2384 Texas 2378 Kentucky 2374 
+
+2024-03-30 15:38:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:55.722Z 3 Maine 2619 Louisiana 2616 
+
+2024-03-30 15:38:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:38:55.723Z 4 Kentucky 2399 New York 2396 
+
+2024-03-30 15:39:10.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:10.723Z 3 Texas 2637 District of Columbia 2629 Louisiana 2625 
+
+2024-03-30 15:39:10.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:10.723Z 4 Indiana 2409 Illinois 2404 
+
+2024-03-30 15:39:25.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:25.723Z 3 Louisiana 2652 Massachusetts 2648 Colorado 2641 
+
+2024-03-30 15:39:25.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:25.723Z 4 Ohio 2419 Kansas 2414 Pennsylvania 2411 
+
+2024-03-30 15:39:40.722 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:40.722Z 3 Tennessee 2668 Virginia 2664 Massachusetts 2657 
+
+2024-03-30 15:39:40.722 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:40.722Z 4 Pennsylvania 2435 Missouri 2430 Texas 2425 
+
+2024-03-30 15:39:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:55.723Z 3 New York 2681 Oregon 2671 
+
+2024-03-30 15:39:55.723 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:39:55.723Z 4 Wisconsin 2451 Missouri 2442 Utah 2438 
+
+2024-03-30 15:40:10.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:10.724Z 3 Virginia 2692 Utah 2687 Texas 2685 
+
+2024-03-30 15:40:10.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:10.724Z 4 Iowa 2460 Louisiana 2455 Wisconsin 2452 
+
+2024-03-30 15:40:25.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:25.724Z 3 North Carolina 2705 Texas 2701 
+
+2024-03-30 15:40:25.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:25.724Z 4 Missouri 2470 Illinois 2466 Iowa 2462 
+
+2024-03-30 15:40:40.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:40.723Z 3 Pennsylvania 2719 New Hampshire 2713 Mississippi 2709 
+
+2024-03-30 15:40:40.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:40.724Z 4 West Virginia 2484 Illinois 2479 Indiana 2472 
+
+2024-03-30 15:40:55.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:55.724Z 3 District of Columbia 2732 Mississippi 2729 Pennsylvania 2725 
+
+2024-03-30 15:40:55.724 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:40:55.724Z 4 Missouri 2495 Pennsylvania 2489 
+
+2024-03-30 15:41:10.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:10.724Z 3 Louisiana 2748 Texas 2742 Illinois 2736 
+
+2024-03-30 15:41:10.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:10.725Z 4 Ohio 2509 Oklahoma 2500 Iowa 2498 
+
+2024-03-30 15:41:25.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:25.725Z 3 Texas 2766 
+
+2024-03-30 15:41:25.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:25.725Z 4 Texas 2523 Minnesota 2514 
+
+2024-03-30 15:41:40.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:40.725Z 3 Louisiana 2773 New York 2770 Texas 2770 
+
+2024-03-30 15:41:40.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:40.725Z 4 New York 2538 
+
+2024-03-30 15:41:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:55.726Z 3 New Hampshire 2786 Alabama 2781 Louisiana 2779 
+
+2024-03-30 15:41:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:41:55.726Z 4 Colorado 2547 Pennsylvania 2541 New York 2538 
+
+2024-03-30 15:42:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:10.726Z 3 New York 2795 Alabama 2790 New Hampshire 2786 
+
+2024-03-30 15:42:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:10.726Z 4 Colorado 2556 North Dakota 2552 Kentucky 2551 
+
+2024-03-30 15:42:25.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:25.725Z 3 Texas 2816 
+
+2024-03-30 15:42:25.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:25.726Z 4 Texas 2566 
+
+2024-03-30 15:42:40.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:40.725Z 3 Texas 2835 West Virginia 2819 
+
+2024-03-30 15:42:40.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:40.726Z 4 Indiana 2577 California 2574 Virginia 2569 
+
+2024-03-30 15:42:55.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:55.725Z 3 Texas 2853 
+
+2024-03-30 15:42:55.725 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:42:55.725Z 4 Michigan 2589 Pennsylvania 2580 
+
+2024-03-30 15:43:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:10.726Z 3 Texas 2865 
+
+2024-03-30 15:43:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:10.726Z 4 Utah 2600 Iowa 2596 Missouri 2593 
+
+2024-03-30 15:43:25.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:25.726Z 3 Texas 2875 
+
+2024-03-30 15:43:25.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:25.727Z 4 Minnesota 2616 Virginia 2604 
+
+2024-03-30 15:43:40.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:40.726Z 3 Kansas 2884 Texas 2881 
+
+2024-03-30 15:43:40.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:40.727Z 4 New York 2628 South Dakota 2624 Pennsylvania 2622 
+
+2024-03-30 15:43:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:55.726Z 3 New Hampshire 2903 Louisiana 2899 
+
+2024-03-30 15:43:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:43:55.726Z 4 Mississippi 2640 Indiana 2636 Ohio 2632 
+
+2024-03-30 15:44:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:10.726Z 3 Texas 2917 North Dakota 2912 Missouri 2905 
+
+2024-03-30 15:44:10.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:10.726Z 4 Utah 2652 West Virginia 2648 
+
+2024-03-30 15:44:25.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:25.726Z 3 Louisiana 2928 Vermont 2922 
+
+2024-03-30 15:44:25.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:25.726Z 4 Utah 2670 Ohio 2662 Tennessee 2656 
+
+2024-03-30 15:44:40.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:40.726Z 3 Louisiana 2939 Rhode Island 2934 Alabama 2931 
+
+2024-03-30 15:44:40.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:40.726Z 4 Ohio 2677 
+
+2024-03-30 15:44:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:55.726Z 3 New York 2957 Kentucky 2950 Vermont 2946 
+
+2024-03-30 15:44:55.726 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:44:55.726Z 4 Michigan 2696 Texas 2690 Illinois 2682 
+
+2024-03-30 15:45:10.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:10.727Z 3 District of Columbia 2965 Texas 2961 Nevada 2958 
+
+2024-03-30 15:45:10.727 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:10.727Z 4 Michigan 2706 Wyoming 2702 California 2696 
+
+2024-03-30 15:45:25.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:25.727Z 3 Vermont 2978 New York 2975 
+
+2024-03-30 15:45:25.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:25.728Z 4 New Mexico 2716 Montana 2712 Oklahoma 2708 
+
+2024-03-30 15:45:40.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:40.728Z 3 New York 2990 West Virginia 2984 Mississippi 2981 
+
+2024-03-30 15:45:40.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:40.728Z 4 New York 2730 Texas 2727 California 2721 
+
+2024-03-30 15:45:55.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:55.728Z 3 Massachusetts 3001 New York 2997 Mississippi 2997 
+
+2024-03-30 15:45:55.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:45:55.728Z 4 New York 2746 Missouri 2739 Tennessee 2734 
+
+2024-03-30 15:46:10.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:10.728Z 3 Texas 3018 Maryland 3013 New Jersey 3007 
+
+2024-03-30 15:46:10.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:10.728Z 4 Hawaii 2766 Michigan 2764 Illinois 2750 
+
+2024-03-30 15:46:25.729 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:25.729Z 3 Texas 3026 
+
+2024-03-30 15:46:25.729 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:25.729Z 4 Ohio 2767 
+
+2024-03-30 15:46:40.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:40.728Z 3 Texas 3026 
+
+2024-03-30 15:46:40.728 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:40.728Z 4 Ohio 2767 
+
+2024-03-30 15:46:55.729 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:55.729Z 3 Texas 3026 
+
+2024-03-30 15:46:55.729 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:46:55.729Z 4 Ohio 2767 
+
+2024-03-30 15:47:10.730 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:10.730Z 3 Texas 3026 
+
+2024-03-30 15:47:10.730 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:10.730Z 4 Ohio 2767 
+
+2024-03-30 15:47:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:25.731Z 3 Texas 3026 
+
+2024-03-30 15:47:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:25.731Z 4 Ohio 2767 
+
+2024-03-30 15:47:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:40.731Z 3 Texas 3026 
+
+2024-03-30 15:47:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:40.731Z 4 Ohio 2767 
+
+2024-03-30 15:47:55.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:55.731Z 3 Texas 3026 
+
+2024-03-30 15:47:55.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:47:55.731Z 4 Ohio 2767 
+
+2024-03-30 15:48:10.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:10.731Z 3 Texas 3026 
+
+2024-03-30 15:48:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:10.731Z 4 Ohio 2767 
+
+2024-03-30 15:48:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:25.731Z 3 Texas 3026 
+
+2024-03-30 15:48:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:25.731Z 4 Ohio 2767 
+
+2024-03-30 15:48:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:40.731Z 3 Texas 3026 
+
+2024-03-30 15:48:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:40.731Z 4 Ohio 2767 
+
+2024-03-30 15:48:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:55.731Z 3 Texas 3026 
+
+2024-03-30 15:48:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:48:55.732Z 4 Ohio 2767 
+
+2024-03-30 15:49:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:10.732Z 3 Texas 3026 
+
+2024-03-30 15:49:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:49:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:25.731Z 3 Texas 3026 
+
+2024-03-30 15:49:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:25.731Z 4 Ohio 2767 
+
+2024-03-30 15:49:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:40.732Z 3 Texas 3026 
+
+2024-03-30 15:49:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:40.732Z 4 Ohio 2767 
+
+2024-03-30 15:49:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:55.732Z 3 Texas 3026 
+
+2024-03-30 15:49:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:49:55.732Z 4 Ohio 2767 
+
+2024-03-30 15:50:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:10.732Z 3 Texas 3026 
+
+2024-03-30 15:50:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:50:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:25.731Z 3 Texas 3026 
+
+2024-03-30 15:50:25.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:25.731Z 4 Ohio 2767 
+
+2024-03-30 15:50:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:40.731Z 3 Texas 3026 
+
+2024-03-30 15:50:40.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:40.731Z 4 Ohio 2767 
+
+2024-03-30 15:50:55.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:55.731Z 3 Texas 3026 
+
+2024-03-30 15:50:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:50:55.732Z 4 Ohio 2767 
+
+2024-03-30 15:51:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:10.732Z 3 Texas 3026 
+
+2024-03-30 15:51:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:10.732Z 4 Ohio 2767 
+
+2024-03-30 15:51:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:25.732Z 3 Texas 3026 
+
+2024-03-30 15:51:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:25.732Z 4 Ohio 2767 
+
+2024-03-30 15:51:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:40.732Z 3 Texas 3026 
+
+2024-03-30 15:51:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:51:55.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:55.731Z 3 Texas 3026 
+
+2024-03-30 15:51:55.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:51:55.731Z 4 Ohio 2767 
+
+2024-03-30 15:52:10.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:10.731Z 3 Texas 3026 
+
+2024-03-30 15:52:10.731 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:10.731Z 4 Ohio 2767 
+
+2024-03-30 15:52:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:25.732Z 3 Texas 3026 
+
+2024-03-30 15:52:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:25.732Z 4 Ohio 2767 
+
+2024-03-30 15:52:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:40.732Z 3 Texas 3026 
+
+2024-03-30 15:52:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:40.732Z 4 Ohio 2767 
+
+2024-03-30 15:52:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:55.732Z 3 Texas 3026 
+
+2024-03-30 15:52:55.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:52:55.732Z 4 Ohio 2767 
+
+2024-03-30 15:53:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:10.732Z 3 Texas 3026 
+
+2024-03-30 15:53:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:10.732Z 4 Ohio 2767 
+
+2024-03-30 15:53:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:25.732Z 3 Texas 3026 
+
+2024-03-30 15:53:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:53:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:40.732Z 3 Texas 3026 
+
+2024-03-30 15:53:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:53:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:55.733Z 3 Texas 3026 
+
+2024-03-30 15:53:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:53:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:54:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:10.733Z 3 Texas 3026 
+
+2024-03-30 15:54:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:54:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:25.732Z 3 Texas 3026 
+
+2024-03-30 15:54:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:54:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:40.733Z 3 Texas 3026 
+
+2024-03-30 15:54:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:54:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:55.732Z 3 Texas 3026 
+
+2024-03-30 15:54:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:54:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:55:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:10.732Z 3 Texas 3026 
+
+2024-03-30 15:55:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:10.732Z 4 Ohio 2767 
+
+2024-03-30 15:55:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:25.733Z 3 Texas 3026 
+
+2024-03-30 15:55:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:55:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:40.733Z 3 Texas 3026 
+
+2024-03-30 15:55:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:55:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:55.733Z 3 Texas 3026 
+
+2024-03-30 15:55:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:55:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:56:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:10.733Z 3 Texas 3026 
+
+2024-03-30 15:56:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:56:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:25.732Z 3 Texas 3026 
+
+2024-03-30 15:56:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:56:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:40.733Z 3 Texas 3026 
+
+2024-03-30 15:56:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:56:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:55.733Z 3 Texas 3026 
+
+2024-03-30 15:56:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:56:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:57:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:10.732Z 3 Texas 3026 
+
+2024-03-30 15:57:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:57:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:25.732Z 3 Texas 3026 
+
+2024-03-30 15:57:25.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:25.732Z 4 Ohio 2767 
+
+2024-03-30 15:57:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:40.733Z 3 Texas 3026 
+
+2024-03-30 15:57:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:57:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:55.733Z 3 Texas 3026 
+
+2024-03-30 15:57:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:57:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:58:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:10.733Z 3 Texas 3026 
+
+2024-03-30 15:58:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:58:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:25.733Z 3 Texas 3026 
+
+2024-03-30 15:58:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:58:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:40.732Z 3 Texas 3026 
+
+2024-03-30 15:58:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:40.732Z 4 Ohio 2767 
+
+2024-03-30 15:58:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:55.733Z 3 Texas 3026 
+
+2024-03-30 15:58:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:58:55.733Z 4 Ohio 2767 
+
+2024-03-30 15:59:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:10.733Z 3 Texas 3026 
+
+2024-03-30 15:59:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:10.733Z 4 Ohio 2767 
+
+2024-03-30 15:59:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:25.733Z 3 Texas 3026 
+
+2024-03-30 15:59:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:25.733Z 4 Ohio 2767 
+
+2024-03-30 15:59:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:40.733Z 3 Texas 3026 
+
+2024-03-30 15:59:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:40.733Z 4 Ohio 2767 
+
+2024-03-30 15:59:55.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:55.733Z 3 Texas 3026 
+
+2024-03-30 15:59:55.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T21:59:55.734Z 4 Ohio 2767 
+
+2024-03-30 16:00:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:10.733Z 3 Texas 3026 
+
+2024-03-30 16:00:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:10.733Z 4 Ohio 2767 
+
+2024-03-30 16:00:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:25.733Z 3 Texas 3026 
+
+2024-03-30 16:00:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:25.733Z 4 Ohio 2767 
+
+2024-03-30 16:00:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:40.733Z 3 Texas 3026 
+
+2024-03-30 16:00:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:40.733Z 4 Ohio 2767 
+
+2024-03-30 16:00:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:55.733Z 3 Texas 3026 
+
+2024-03-30 16:00:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:00:55.733Z 4 Ohio 2767 
+
+2024-03-30 16:01:10.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:10.732Z 3 Texas 3026 
+
+2024-03-30 16:01:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:10.733Z 4 Ohio 2767 
+
+2024-03-30 16:01:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:25.733Z 3 Texas 3026 
+
+2024-03-30 16:01:25.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:25.733Z 4 Ohio 2767 
+
+2024-03-30 16:01:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:40.732Z 3 Texas 3026 
+
+2024-03-30 16:01:40.732 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:40.732Z 4 Ohio 2767 
+
+2024-03-30 16:01:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:55.732Z 3 Texas 3026 
+
+2024-03-30 16:01:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:01:55.733Z 4 Ohio 2767 
+
+2024-03-30 16:02:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:10.733Z 3 Texas 3026 
+
+2024-03-30 16:02:10.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:10.733Z 4 Ohio 2767 
+
+2024-03-30 16:02:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:25.733Z 3 Texas 3026 
+
+2024-03-30 16:02:25.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:25.733Z 4 Ohio 2767 
+
+2024-03-30 16:02:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:40.733Z 3 Texas 3026 
+
+2024-03-30 16:02:40.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:40.733Z 4 Ohio 2767 
+
+2024-03-30 16:02:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:55.733Z 3 Texas 3026 
+
+2024-03-30 16:02:55.733 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:02:55.733Z 4 Ohio 2767 
+
+2024-03-30 16:03:10.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:10.734Z 3 Texas 3026 
+
+2024-03-30 16:03:10.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:10.734Z 4 Ohio 2767 
+
+2024-03-30 16:03:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:25.735Z 3 Texas 3026 
+
+2024-03-30 16:03:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:25.735Z 4 Ohio 2767 
+
+2024-03-30 16:03:40.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:40.734Z 3 Texas 3026 
+
+2024-03-30 16:03:40.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:40.734Z 4 Ohio 2767 
+
+2024-03-30 16:03:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:55.735Z 3 Texas 3026 
+
+2024-03-30 16:03:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:03:55.735Z 4 Ohio 2767 
+
+2024-03-30 16:04:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:10.735Z 3 Texas 3026 
+
+2024-03-30 16:04:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:10.735Z 4 Ohio 2767 
+
+2024-03-30 16:04:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:25.735Z 3 Texas 3026 
+
+2024-03-30 16:04:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:25.735Z 4 Ohio 2767 
+
+2024-03-30 16:04:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:40.734Z 3 Texas 3026 
+
+2024-03-30 16:04:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:40.735Z 4 Ohio 2767 
+
+2024-03-30 16:04:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:55.735Z 3 Texas 3026 
+
+2024-03-30 16:04:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:04:55.735Z 4 Ohio 2767 
+
+2024-03-30 16:05:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:10.735Z 3 Texas 3026 
+
+2024-03-30 16:05:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:10.735Z 4 Ohio 2767 
+
+2024-03-30 16:05:25.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:25.734Z 3 Texas 3026 
+
+2024-03-30 16:05:25.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:25.734Z 4 Ohio 2767 
+
+2024-03-30 16:05:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:40.735Z 3 Texas 3026 
+
+2024-03-30 16:05:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:40.735Z 4 Ohio 2767 
+
+2024-03-30 16:05:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:55.735Z 3 Texas 3026 
+
+2024-03-30 16:05:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:05:55.735Z 4 Ohio 2767 
+
+2024-03-30 16:06:10.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:10.734Z 3 Texas 3026 
+
+2024-03-30 16:06:10.734 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:10.734Z 4 Ohio 2767 
+
+2024-03-30 16:06:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:25.735Z 3 Texas 3026 
+
+2024-03-30 16:06:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:25.735Z 4 Ohio 2767 
+
+2024-03-30 16:06:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:40.735Z 3 Texas 3026 
+
+2024-03-30 16:06:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:40.735Z 4 Ohio 2767 
+
+2024-03-30 16:06:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:55.735Z 3 Texas 3026 
+
+2024-03-30 16:06:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:06:55.735Z 4 Ohio 2767 
+
+2024-03-30 16:07:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:10.735Z 3 Texas 3026 
+
+2024-03-30 16:07:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:10.735Z 4 Ohio 2767 
+
+2024-03-30 16:07:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:25.735Z 3 Texas 3026 
+
+2024-03-30 16:07:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:25.735Z 4 Ohio 2767 
+
+2024-03-30 16:07:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:40.735Z 3 Texas 3026 
+
+2024-03-30 16:07:40.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:40.735Z 4 Ohio 2767 
+
+2024-03-30 16:07:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:55.735Z 3 Texas 3026 
+
+2024-03-30 16:07:55.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:07:55.735Z 4 Ohio 2767 
+
+2024-03-30 16:08:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:10.735Z 3 Texas 3026 
+
+2024-03-30 16:08:10.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:10.735Z 4 Ohio 2767 
+
+2024-03-30 16:08:25.735 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:25.735Z 3 Texas 3026 
+
+2024-03-30 16:08:25.736 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:25.735Z 4 Ohio 2767 
+
+2024-03-30 16:08:40.736 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:40.736Z 3 Texas 3026 
+
+2024-03-30 16:08:40.736 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:40.736Z 4 Ohio 2767 
+
+2024-03-30 16:08:55.736 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:55.736Z 3 Texas 3026 
+
+2024-03-30 16:08:55.736 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:08:55.736Z 4 Ohio 2767 
+
+2024-03-30 16:09:10.737 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:10.737Z 3 Texas 3026 
+
+2024-03-30 16:09:10.738 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:10.738Z 4 Ohio 2767 
+
+2024-03-30 16:09:25.737 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:25.737Z 3 Texas 3026 
+
+2024-03-30 16:09:25.737 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:25.737Z 4 Ohio 2767 
+
+2024-03-30 16:09:40.738 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:40.738Z 3 Texas 3026 
+
+2024-03-30 16:09:40.738 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:40.738Z 4 Ohio 2767 
+
+2024-03-30 16:09:55.737 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:55.737Z 3 Texas 3026 
+
+2024-03-30 16:09:55.737 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:09:55.737Z 4 Ohio 2767 
+
+2024-03-30 16:10:10.738 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:10.738Z 3 Texas 3026 
+
+2024-03-30 16:10:10.738 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:10.738Z 4 Ohio 2767 
+
+2024-03-30 16:10:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:25.739Z 3 Texas 3026 
+
+2024-03-30 16:10:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:25.739Z 4 Ohio 2767 
+
+2024-03-30 16:10:40.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:40.739Z 3 Texas 3026 
+
+2024-03-30 16:10:40.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:40.739Z 4 Ohio 2767 
+
+2024-03-30 16:10:55.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:55.739Z 3 Texas 3026 
+
+2024-03-30 16:10:55.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:10:55.739Z 4 Ohio 2767 
+
+2024-03-30 16:11:10.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:10.738Z 3 Texas 3026 
+
+2024-03-30 16:11:10.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:10.739Z 4 Ohio 2767 
+
+2024-03-30 16:11:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:25.739Z 3 Texas 3026 
+
+2024-03-30 16:11:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:25.739Z 4 Ohio 2767 
+
+2024-03-30 16:11:40.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:40.739Z 3 Texas 3026 
+
+2024-03-30 16:11:40.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:40.739Z 4 Ohio 2767 
+
+2024-03-30 16:11:55.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:55.739Z 3 Texas 3026 
+
+2024-03-30 16:11:55.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:11:55.739Z 4 Ohio 2767 
+
+2024-03-30 16:12:10.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:10.739Z 3 Texas 3026 
+
+2024-03-30 16:12:10.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:10.739Z 4 Ohio 2767 
+
+2024-03-30 16:12:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:25.739Z 3 Texas 3026 
+
+2024-03-30 16:12:25.739 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:25.739Z 4 Ohio 2767 
+
+2024-03-30 16:12:40.740 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:40.740Z 3 Texas 3026 
+
+2024-03-30 16:12:40.740 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:40.740Z 4 Ohio 2767 
+
+2024-03-30 16:12:55.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:55.741Z 3 Texas 3026 
+
+2024-03-30 16:12:55.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:12:55.741Z 4 Ohio 2767 
+
+2024-03-30 16:13:10.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:10.741Z 3 Texas 3026 
+
+2024-03-30 16:13:10.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:10.741Z 4 Ohio 2767 
+
+2024-03-30 16:13:25.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:25.741Z 3 Texas 3026 
+
+2024-03-30 16:13:25.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:25.741Z 4 Ohio 2767 
+
+2024-03-30 16:13:40.741 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:40.741Z 3 Texas 3026 
+
+2024-03-30 16:13:40.742 F.ForecastReportBolt Thread-17-forecast-report-bolt-executor[11, 12] [INFO] 2024-03-30T22:13:40.742Z 4 Ohio 2767 
+
